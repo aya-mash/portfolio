@@ -14,7 +14,12 @@
     "Improved import reliability by about 25 percent through schema-driven validation, automated lookup reconciliation, and precise error surfacing before save.",
     "Cut build and setup time by roughly 40 percent by delivering a Vite-based application boilerplate with environment management and automated versioning.",
     "Strengthened reliability and governance by integrating static analysis and dependency scanning in CI, addressing issues earlier and improving audit readiness.",
-    "Aligned frontend and backend through explicit GraphQL contracts, validation semantics, auditing fields, and thin client abstractions to reduce client-side workarounds."
+    "Aligned frontend and backend through explicit GraphQL contracts, validation semantics, auditing fields, and thin client abstractions to reduce client-side workarounds.",
+    "Optimized client-side performance using caching strategies and render tuning for data-heavy views, improving perceived load time on targeted flows.",
+    "Reduced support overhead by surfacing pre-save errors and batch error reports, lowering incidents related to import failures.",
+    "Accelerated onboarding and review by shipping documentation-first assets including READMEs, usage guides, and review checklists adopted across teams.",
+    "Delivered secure mobile access features including NFC interactions and OIDC authentication with telemetry for usage tracking.",
+    "Upgraded build pipelines and runtimes (Node and .NET) to improve stability, speed, and release predictability in Azure DevOps."
   ],
   "core_technical_skills": {
     "Frontend": [
@@ -62,7 +67,7 @@
   },
   "professional_experience": [
     {
-      "company": "Mercedes-Benz",
+      "company": "Mercedes-Benz South Africa",
       "role": "Frontend Engineer, Global master data and planning platform",
       "start_date": "2021-12",
       "end_date": "Present",
@@ -80,7 +85,7 @@
         "React",
         "TypeScript",
         "MUI",
-        "Zustand",
+        "State Management",
         "Apollo Client",
         "React Query",
         "GraphQL",
@@ -129,52 +134,118 @@
   ],
   "select_projects": [
     {
-      "title": "Global Data UI Platform",
+      "title": "Global Master Data and Planning Platform (Web)",
       "scope": "Internal",
-      "description": "Standardized complex tables and forms with shared filtering, pagination, inline edit, and consistent actions.",
-      "outcome": "Faster feature delivery and leaner reviews across multiple product areas.",
-      "technologies": ["React", "TypeScript", "MUI", "Zustand"]
+      "description": "Enterprise web platform enabling regional production and supply chain planning with high volume master data updates and imports.",
+      "outcome": "Operational reliability at scale with standardized UX and guardrails for data integrity.",
+      "technologies": ["React", "TypeScript", "GraphQL", ".NET", "Azure DevOps"]
     },
     {
       "title": "Schema-driven Import Pipeline",
       "scope": "Internal",
-      "description": "Pre-validation and reconciliation for file-based imports with early error surfacing and automatic lookups.",
+      "description": "Pre-validation and reconciliation for file-based imports with early error surfacing, coercions, and automatic lookups.",
       "outcome": "Higher import success rates and fewer production incidents related to data quality.",
       "technologies": ["React", "TypeScript", "GraphQL", ".NET APIs"]
     },
     {
       "title": "Build Modernization and Boilerplate",
       "scope": "Internal",
-      "description": "Vite-based app template with environment handling and automated versioning.",
+      "description": "Vite-based app template with environment handling and automated versioning; Webpack to Vite migrations for speed and consistency.",
       "outcome": "About 40 percent faster builds and improved developer onboarding.",
       "technologies": ["Vite", "Node.js", "Webpack", "Azure DevOps", "Docker"]
     },
     {
       "title": "Mobile Access and Authentication",
       "scope": "Internal",
-      "description": "NFC interactions and OIDC authentication in an internal hub application for secure access and usage tracking.",
-      "outcome": "Stronger access controls and improved user experience across mobile clients.",
+      "description": "Internal companion app with NFC interactions, OIDC authentication, usage telemetry, and mobile navigation patterns.",
+      "outcome": "Stronger access controls, improved visibility through telemetry, and a better mobile UX.",
       "technologies": ["React Native", "Expo", "OIDC", "JWT"]
+    },
+    {
+      "title": "GraphQL Domain APIs",
+      "scope": "Internal",
+      "description": "Queries and mutations for pricing and classification domains with validation rules and auditing fields; clarified error semantics and improved payload efficiency.",
+      "outcome": "Clearer contracts, fewer client workarounds, and more predictable releases.",
+      "technologies": ["GraphQL", ".NET", "HotChocolate"]
+    },
+    {
+      "title": "Security and Compliance Enablement in CI",
+      "scope": "Internal",
+      "description": "Integrated static analysis and dependency license scanning into pipelines; remediated priority vulnerabilities and enforced guarded release policies.",
+      "outcome": "Improved security posture and smoother audit checkpoints.",
+      "technologies": ["Azure DevOps", "SonarQube", "BlackDuck", "Node.js"]
+    },
+    {
+      "title": "Material Pricing Administration",
+      "scope": "Internal",
+      "description": "Frontends and endpoints for standard parts pricing, exchange rates, surcharges, and transport costs with consistent validation and auditing.",
+      "outcome": "Streamlined pricing updates and reduced manual corrections.",
+      "technologies": ["React", "TypeScript", "GraphQL", ".NET"]
+    },
+    {
+      "title": "Workstations and Groups Administration",
+      "scope": "Internal",
+      "description": "Config UI for workstations and workplace groups using standardized table and form patterns; included bulk updates and validation.",
+      "outcome": "Faster configuration cycles and consistent data quality.",
+      "technologies": ["React", "TypeScript", "MUI"]
+    },
+    {
+      "title": "Supplier Onboarding and Cost Centers",
+      "scope": "Internal",
+      "description": "UI workflows and validations for supplier onboarding and cost center management leveraging shared platform components.",
+      "outcome": "Reduced onboarding friction and improved consistency across administrative modules.",
+      "technologies": ["React", "TypeScript", "GraphQL"]
     },
     {
       "title": "Foonda",
       "scope": "Public",
-      "description": "AI-powered career guidance and resume builder focused on South African users with modern web UX and data modeling.",
-      "outcome": "Demonstrates full stack product design with AI integration, resume generation workflows, and robust data structures.",
+      "description": "AI-powered career guidance and resume builder focused on South African users with modern web UX and structured data modeling.",
+      "outcome": "Demonstrates full stack product design with AI integration, resume workflows, and robust data structures.",
       "technologies": [
         "Next.js",
         "TypeScript",
         "Prisma",
         "PostgreSQL",
         "Gemini AI"
-      ]
+      ],
+      "url": "https://github.com/aya-mash/foonda"
     },
     {
       "title": "Web NFC TypeScript Library",
       "scope": "Public",
-      "description": "TypeScript library wrapping the Web NFC API for permissions, scanning, writing flows, and robust error handling.",
-      "outcome": "Demonstrates API design, device integration, and defensive error strategies.",
-      "technologies": ["TypeScript", "Web NFC API"]
+      "description": "TypeScript wrapper for the Web NFC API with permission handling, scanning, writing flows, and robust error strategies.",
+      "outcome": "Demonstrates API design, device integration, and defensive error handling.",
+      "technologies": ["TypeScript", "Web NFC API"],
+      "url": "https://github.com/aya-mash/web-nfc-api"
+    },
+    {
+      "title": "Black and White Infrastructure Migration",
+      "scope": "Public",
+      "description": "Migration from shared hosting to AWS for improved scalability, performance, and deployment control.",
+      "outcome": "More reliable deployments and better operational visibility.",
+      "technologies": ["AWS", "CI/CD"]
+    },
+    {
+      "title": "E-Pharmacy System",
+      "scope": "Public",
+      "description": "React Native and Java system for pharmacy management and delivery as a capstone project.",
+      "outcome": "Demonstrates mobile app delivery and backend integration.",
+      "technologies": ["React Native", "Java"]
+    },
+    {
+      "title": "FindaDoctor (Competition Project)",
+      "scope": "Public",
+      "description": "UX-first healthcare access app prototyped for the MTN ICT Challenge.",
+      "outcome": "Showcases rapid ideation and user-centered design for social impact.",
+      "technologies": ["Web", "Mobile"]
+    },
+    {
+      "title": "Portfolio Website",
+      "scope": "Public",
+      "description": "Personal site and project hub with clean layouts and outbound links to work and credentials.",
+      "outcome": "Centralized presence for showcasing projects and achievements.",
+      "technologies": ["Modern web stack", "CI/CD"],
+      "url": "https://github.com/aya-mash/portfolio"
     }
   ],
   "education_certifications": [

@@ -24,6 +24,7 @@ export interface ProjectItem {
   description: string;
   outcome: string;
   technologies: string[];
+  url?: string; // optional repository or live link
 }
 
 export interface EducationCertItem {

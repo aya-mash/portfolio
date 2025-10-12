@@ -1,15 +1,24 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
+type AllowedTags = 'div' | 'article' | 'section' | 'li';
+
 interface NeonCardProps {
   children: ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: AllowedTags;
   href?: string;
 }
 
-export function NeonCard({ children, className, as = 'div', href }: NeonCardProps) {
-  const Comp: any = motion[as] ?? motion.div;
+const tagMap: Record<AllowedTags, any> = {
+  div: motion.div,
+  article: motion.article,
+  section: motion.section,
+  li: motion.li
+};
+
+export function NeonCard({ children, className, as = 'div', href }: Readonly<NeonCardProps>) {
+  const Comp = tagMap[as] || motion.div;
   const base = 'group relative glass p-5 rounded-xl transition-colors overflow-hidden';
   return (
     <Comp

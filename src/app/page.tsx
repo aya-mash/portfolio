@@ -19,7 +19,7 @@ export default function HomePage() {
       <AdditionalInfo />
       <ContactSection />
       <footer className="py-16 text-center text-[11px] tracking-widest text-slate-500 font-mono">
-        Built with Next.js · Tailwind · Framer Motion
+        Aya Mash · {new Date().getFullYear()} · Built with Next.js, TailwindCSS, and Framer Motion
       </footer>
     </main>
   );
