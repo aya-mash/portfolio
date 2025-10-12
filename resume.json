@@ -208,7 +208,7 @@
         "PostgreSQL",
         "Gemini AI"
       ],
-      "url": "https://github.com/aya-mash/foonda"
+      "url": "https://foonda.amash.tech/"
     },
     {
       "title": "Web NFC TypeScript Library",
@@ -216,28 +216,31 @@
       "description": "TypeScript wrapper for the Web NFC API with permission handling, scanning, writing flows, and robust error strategies.",
       "outcome": "Demonstrates API design, device integration, and defensive error handling.",
       "technologies": ["TypeScript", "Web NFC API"],
-      "url": "https://github.com/aya-mash/web-nfc-api"
+      "url": "https://www.npmjs.com/package/@aya-mash/web-nfc-api"
     },
     {
       "title": "Black and White Infrastructure Migration",
       "scope": "Public",
       "description": "Migration from shared hosting to AWS for improved scalability, performance, and deployment control.",
       "outcome": "More reliable deployments and better operational visibility.",
-      "technologies": ["AWS", "CI/CD"]
+      "technologies": ["AWS", "CI/CD"],
+      "url": "https://blacknwhite6.com"
     },
     {
       "title": "E-Pharmacy System",
       "scope": "Public",
       "description": "React Native and Java system for pharmacy management and delivery as a capstone project.",
       "outcome": "Demonstrates mobile app delivery and backend integration.",
-      "technologies": ["React Native", "Java"]
+      "technologies": ["React Native", "Java"],
+      "url": "https://github.com/aya-mash/ePharmacyDeliverySystem"
     },
     {
       "title": "FindaDoctor (Competition Project)",
       "scope": "Public",
       "description": "UX-first healthcare access app prototyped for the MTN ICT Challenge.",
       "outcome": "Showcases rapid ideation and user-centered design for social impact.",
-      "technologies": ["Web", "Mobile"]
+      "technologies": ["Web", "Mobile"],
+      "url": "https://github.com/aya-mash/findadoctor"
     },
     {
       "title": "Portfolio Website",
