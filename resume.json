@@ -1,0 +1,208 @@
+{
+  "personal_info": {
+    "name": "Ayabulela Mahlathini",
+    "preferred_name": "Aya",
+    "title": "Frontend Engineer",
+    "location": "Remote, open to relocation",
+    "github": "https://github.com/aya-mash",
+    "email": "ayabulelamahlathini@gmail.com",
+    "phone": "+27 84 908 6628"
+  },
+  "executive_summary": "Frontend engineer with about 5 years of experience delivering data-intensive applications in React and TypeScript. Built core capabilities for a Mercedes-Benz global master data and planning platform used across regions for production and supply chain operations. Drove faster releases, higher import reliability, and improved developer efficiency through platformized UI architecture, schema-driven validation, and CI modernization.",
+  "key_achievements": [
+    "Established a reusable data UI platform for complex tables and forms, standardizing filters, pagination, and inline edit patterns to accelerate features and reduce review friction by about 30 percent on key modules.",
+    "Improved import reliability by about 25 percent through schema-driven validation, automated lookup reconciliation, and precise error surfacing before save.",
+    "Cut build and setup time by roughly 40 percent by delivering a Vite-based application boilerplate with environment management and automated versioning.",
+    "Strengthened reliability and governance by integrating static analysis and dependency scanning in CI, addressing issues earlier and improving audit readiness.",
+    "Aligned frontend and backend through explicit GraphQL contracts, validation semantics, auditing fields, and thin client abstractions to reduce client-side workarounds."
+  ],
+  "core_technical_skills": {
+    "Frontend": [
+      "React",
+      "TypeScript",
+      "MUI",
+      "Zustand",
+      "Next.js",
+      "Complex tables and forms",
+      "Virtualization",
+      "Accessibility",
+      "Internationalization",
+      "React Native",
+      "Expo"
+    ],
+    "Data Layer": [
+      "GraphQL",
+      "REST",
+      "Apollo Client",
+      "React Query",
+      "Caching strategies",
+      "Pagination for large datasets",
+      ".NET APIs",
+      "HotChocolate"
+    ],
+    "Tooling/CI/CD": [
+      "Azure DevOps",
+      "Node.js",
+      "Vite",
+      "Webpack",
+      "Docker",
+      "Automated versioning",
+      "Release hygiene"
+    ],
+    "Quality/Security": [
+      "Schema-driven validation pipelines",
+      "Error handling frameworks",
+      "SonarQube",
+      "BlackDuck",
+      "JWT",
+      "OIDC",
+      "Jest",
+      "Cypress"
+    ]
+  },
+  "professional_experience": [
+    {
+      "company": "Mercedes-Benz",
+      "role": "Frontend Engineer, Global master data and planning platform",
+      "start_date": "2021-12",
+      "end_date": "Present",
+      "scope": "Frontend ownership for a web platform used across regions for production and supply chain planning, supporting high-volume master data updates and frequent file imports.",
+      "responsibilities": [
+        "Consolidated table and form experiences into a reusable UI foundation with consistent filters, pagination, inline editing, and shared toolbars to speed delivery.",
+        "Implemented schema-driven Excel imports with early validation, automated lookup reconciliation, and precise error messages to increase first-pass success.",
+        "Co-designed GraphQL queries and mutations with backend teams and aligned validation and auditing fields to create stable contracts and predictable releases.",
+        "Embedded static analysis and dependency scanning in CI and strengthened authentication with encrypted tokens and OIDC where required to improve security posture.",
+        "Delivered a Vite boilerplate with environment management and automated versioning to shorten build cycles and accelerate onboarding.",
+        "Evolved an internal hub application from prototype to production-ready with NFC interactions and OIDC authentication for secure access and usage tracking.",
+        "Authored onboarding guides, READMEs, and review checklists; mentored junior developers; facilitated lightweight design reviews for cross-team alignment."
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "MUI",
+        "Zustand",
+        "Apollo Client",
+        "React Query",
+        "GraphQL",
+        ".NET",
+        "HotChocolate",
+        "Node.js",
+        "Azure DevOps",
+        "Webpack",
+        "Vite",
+        "SonarQube",
+        "Docker",
+        "JWT",
+        "OIDC"
+      ]
+    },
+    {
+      "company": "Autumn Leaf IT",
+      "role": "Junior Software Developer",
+      "start_date": "2021-08",
+      "end_date": "2021-11",
+      "scope": "Full stack feature development and cloud deployment support.",
+      "responsibilities": [
+        "Built full stack features with React and GraphQL.",
+        "Supported cloud deployments and improved release reliability."
+      ],
+      "technologies": ["React", "GraphQL", "Node.js", "AWS"]
+    },
+    {
+      "company": "Amazon Web Services",
+      "role": "Intern Cloud Support Associate",
+      "start_date": "2021-01",
+      "end_date": "2021-06",
+      "scope": "Operational support and troubleshooting for core AWS services.",
+      "responsibilities": [
+        "Handled issues related to EC2, S3, IAM, and CloudWatch.",
+        "Authored documentation and knowledge base entries for customer workflows."
+      ],
+      "technologies": [
+        "AWS EC2",
+        "AWS S3",
+        "AWS IAM",
+        "Amazon CloudWatch",
+        "AWS CLI"
+      ]
+    }
+  ],
+  "select_projects": [
+    {
+      "title": "Global Data UI Platform",
+      "scope": "Internal",
+      "description": "Standardized complex tables and forms with shared filtering, pagination, inline edit, and consistent actions.",
+      "outcome": "Faster feature delivery and leaner reviews across multiple product areas.",
+      "technologies": ["React", "TypeScript", "MUI", "Zustand"]
+    },
+    {
+      "title": "Schema-driven Import Pipeline",
+      "scope": "Internal",
+      "description": "Pre-validation and reconciliation for file-based imports with early error surfacing and automatic lookups.",
+      "outcome": "Higher import success rates and fewer production incidents related to data quality.",
+      "technologies": ["React", "TypeScript", "GraphQL", ".NET APIs"]
+    },
+    {
+      "title": "Build Modernization and Boilerplate",
+      "scope": "Internal",
+      "description": "Vite-based app template with environment handling and automated versioning.",
+      "outcome": "About 40 percent faster builds and improved developer onboarding.",
+      "technologies": ["Vite", "Node.js", "Webpack", "Azure DevOps", "Docker"]
+    },
+    {
+      "title": "Mobile Access and Authentication",
+      "scope": "Internal",
+      "description": "NFC interactions and OIDC authentication in an internal hub application for secure access and usage tracking.",
+      "outcome": "Stronger access controls and improved user experience across mobile clients.",
+      "technologies": ["React Native", "Expo", "OIDC", "JWT"]
+    },
+    {
+      "title": "Foonda",
+      "scope": "Public",
+      "description": "AI-powered career guidance and resume builder focused on South African users with modern web UX and data modeling.",
+      "outcome": "Demonstrates full stack product design with AI integration, resume generation workflows, and robust data structures.",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Gemini AI"
+      ]
+    },
+    {
+      "title": "Web NFC TypeScript Library",
+      "scope": "Public",
+      "description": "TypeScript library wrapping the Web NFC API for permissions, scanning, writing flows, and robust error handling.",
+      "outcome": "Demonstrates API design, device integration, and defensive error strategies.",
+      "technologies": ["TypeScript", "Web NFC API"]
+    }
+  ],
+  "education_certifications": [
+    {
+      "degree_cert": "Diploma in ICT in Applications Development",
+      "institution": "Cape Peninsula University of Technology",
+      "year": null
+    },
+    {
+      "degree_cert": "Meta Front-End Developer Professional Certificate",
+      "institution": "Meta",
+      "year": 2025
+    },
+    {
+      "degree_cert": "Microsoft Certified Azure Fundamentals",
+      "institution": "Microsoft",
+      "year": 2024
+    },
+    {
+      "degree_cert": "AWS Certified Cloud Practitioner",
+      "institution": "Amazon Web Services",
+      "year": 2021
+    }
+  ],
+  "additional_information": [
+    "Graduate development training in agile and DevOps practices.",
+    "Recognized for delivery excellence and documentation that improves cross-team alignment.",
+    "Mentorship and workshop facilitation for onboarding and pattern adoption.",
+    "Experienced in cross-cultural collaboration with distributed teams across regions using documentation-first alignment, async reviews, and clear ownership."
+  ]
+}
