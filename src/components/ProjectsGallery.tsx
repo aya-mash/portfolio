@@ -3,13 +3,27 @@ import { loadResume } from '@/lib/resume';
 import { SectionShell } from './SectionShell';
 import { NeonCard } from './NeonCard';
 import { motion } from 'framer-motion';
+import { useState, useMemo } from 'react';
+
+type Tab = 'all' | 'public' | 'internal';
 
 export function ProjectsGallery() {
   const { select_projects } = loadResume();
+  const [tab, setTab] = useState<Tab>('all');
+  const filtered = useMemo(() => {
+    if (tab === 'public') return select_projects.filter(p => p.scope === 'Public');
+    if (tab === 'internal') return select_projects.filter(p => p.scope !== 'Public');
+    return select_projects;
+  }, [tab, select_projects]);
   return (
-    <SectionShell id="projects" title="Select Projects" eyebrow="PROJECTS">
+    <SectionShell id="projects" title="Select Projects" eyebrow="PREVIOUS WORK">
+      <div className="flex flex-wrap gap-2 mb-8 text-[11px] font-mono uppercase tracking-wider">
+        <button onClick={() => setTab('all')} className={`px-3 py-1 rounded-md border ${tab==='all' ? 'border-neon-pink/60 text-neon-pink' : 'border-white/10 text-soft hover:border-white/25'}`}>All</button>
+        <button onClick={() => setTab('public')} className={`px-3 py-1 rounded-md border ${tab==='public' ? 'border-neon-pink/60 text-neon-pink' : 'border-white/10 text-soft hover:border-white/25'}`}>Public</button>
+        <button onClick={() => setTab('internal')} className={`px-3 py-1 rounded-md border ${tab==='internal' ? 'border-neon-pink/60 text-neon-pink' : 'border-white/10 text-soft hover:border-white/25'}`}>Private</button>
+      </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {select_projects.map((p, i) => {
+        {filtered.map((p, i) => {
           const clickable = p.scope === 'Public' && p.url;
           const content = (
             <NeonCard>

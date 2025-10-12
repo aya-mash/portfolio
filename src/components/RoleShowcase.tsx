@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Rotating capability keywords sourced directly from resume core skills & achievements
@@ -21,10 +21,31 @@ const WORDS = [
 
 export function RoleShowcase() {
   const [index, setIndex] = useState(0);
+  const measureRef = useRef<HTMLSpanElement | null>(null);
+  const [widthCh, setWidthCh] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % WORDS.length), 2000);
     return () => clearInterval(id);
   }, []);
+  useEffect(() => {
+    // Measure current word width and set container width in ch (approximate using character count fallback)
+    const word = WORDS[index];
+    if (measureRef.current) {
+      measureRef.current.textContent = word;
+      const rect = measureRef.current.getBoundingClientRect();
+      // Convert px width to ch equivalent using average character width of the element's font
+      const fontSize = parseFloat(getComputedStyle(measureRef.current).fontSize || '13');
+      // Rough monospace approximation: ch ~ fontSize * 0.62 (for JetBrains Mono it can be near 0.6). We prefer measuring '0' width.
+  measureRef.current.textContent = '0';
+      const zeroRect = measureRef.current.getBoundingClientRect();
+      const perCh = zeroRect.width || (fontSize * 0.62);
+      measureRef.current.textContent = word;
+      const ch = rect.width / perCh;
+      setWidthCh(Math.ceil(ch + 0.5));
+    } else {
+      setWidthCh(word.length + 1);
+    }
+  }, [index]);
   return (
     <div className="mt-6 font-mono text-[13px] md:text-sm tracking-wide text-soft/90">
       <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -32,8 +53,10 @@ export function RoleShowcase() {
           &lt;FrontendEngineer /&gt;
         </span>
         <span className="text-muted">specialising in</span>
-        {/* Width tuned for the longest term ("Accessibility"). */}
-        <span className="relative inline-block h-[1.4em] w-[11ch]">
+        <span
+          className="relative inline-block h-[1.4em]"
+          style={{ width: widthCh ? `${widthCh}ch` : undefined }}
+        >
           <AnimatePresence mode="wait" initial={false}>
             <motion.span
               key={WORDS[index]}
@@ -47,6 +70,8 @@ export function RoleShowcase() {
             </motion.span>
           </AnimatePresence>
         </span>
+        {/* Hidden measuring span */}
+        <span ref={measureRef} className="absolute -z-10 opacity-0 pointer-events-none font-mono text-[13px] md:text-sm tracking-wide whitespace-pre" aria-hidden />
         <span className="hidden sm:inline text-muted">
           crafting resilient UI pipelines
         </span>

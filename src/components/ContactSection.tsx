@@ -5,10 +5,9 @@ import { SectionShell } from './SectionShell';
 export function ContactSection() {
   const { personal_info } = loadResume();
   return (
-    <SectionShell id="contact" title="Contact" eyebrow="CONTACT">
+    <SectionShell id="contact" title="Reach Out" eyebrow="CONTACT">
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <h3 className="text-lg font-semibold">Reach Out</h3>
           <p className="text-sm text-slate-300 mt-2 max-w-md">
             Open to roles focused on data-intensive frontend systems, platform UI architecture, and performance-minded React engineering.
           </p>

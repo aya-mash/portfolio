@@ -38,6 +38,8 @@ export interface ResumeData {
   executive_summary: string;
   key_achievements: string[];
   core_technical_skills: Record<string, string[]>; // category -> skills
+  core_competencies?: { title: string; items: string[]; }[];
+  technical_stack?: Record<string, string[]>;
   professional_experience: ProfessionalExperienceItem[];
   select_projects: ProjectItem[];
   education_certifications: EducationCertItem[];

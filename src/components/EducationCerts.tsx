@@ -6,7 +6,7 @@ import { NeonCard } from './NeonCard';
 export function EducationCerts() {
   const { education_certifications } = loadResume();
   return (
-    <SectionShell id="education" title="Education & Certifications" eyebrow="EDUCATION">
+    <SectionShell id="education" title="Education & Certifications" eyebrow="CONTINUOUS LEARNING">
       <div className="grid md:grid-cols-2 gap-6">
         {education_certifications.map(item => (
           <NeonCard key={item.degree_cert}>

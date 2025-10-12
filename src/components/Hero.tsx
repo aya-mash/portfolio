@@ -28,7 +28,7 @@ export function Hero() {
                   {personal_info.preferred_name}
                 </span>
                 <span className="mt-3 block text-slate-300 text-xl md:text-2xl font-light">
-                  Frontend Engineer · {totalYearsExperience}+ yrs
+                  Frontend Engineer · {totalYearsExperience != null ? Math.round(totalYearsExperience) : 0}+ yrs
                 </span>
                 <span className="block font-mono text-[13px] md:text-sm text-neon-blue/60 tracking-wider mt-4">
                   &lt;/h1&gt;
