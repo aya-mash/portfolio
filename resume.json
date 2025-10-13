@@ -32,7 +32,7 @@
     },
     {
       "heading": "DevEx that compounds",
-      "description": "Delivered a Vite-based boilerplate with environment management and automated versioning ~40% faster builds/onboarding, shorter CI cycles, predictable releases."
+      "description": "Migrated from webpack and delivered a Vite-based boilerplate with configurable layout, i18n, authentication, environment management and automated versioning ~40% faster builds/onboarding, shorter CI cycles, predictable releases."
     },
     {
       "heading": "Secure, compliant delivery",
@@ -94,34 +94,109 @@
   "core_competencies": [
     {
       "title": "Frontend Engineering",
-      "items": ["React", "TypeScript", "MUI", "State management", "Complex tables and forms", "Accessibility", "i18n", "Virtualization", "React Native", "Expo"]
+      "items": [
+        "React",
+        "TypeScript",
+        "MUI",
+        "State management",
+        "Complex tables and forms",
+        "Accessibility",
+        "i18n",
+        "Virtualization",
+        "React Native",
+        "Expo"
+      ]
     },
     {
       "title": "Platform Engineering and DX",
-      "items": ["Reusable UI frameworks", "Scaffolding", "Webpack→Vite migrations", "Env & versioning automation", "Documentation", "Review checklists"]
+      "items": [
+        "Reusable UI frameworks",
+        "Scaffolding",
+        "Webpack→Vite migrations",
+        "Env & versioning automation",
+        "Documentation",
+        "Review checklists"
+      ]
     },
     {
       "title": "Data and APIs",
-      "items": ["GraphQL", "REST", "Apollo Client", "React Query", "Pagination strategies", "Validation alignment", "Auditing alignment", ".NET", "HotChocolate"]
+      "items": [
+        "GraphQL",
+        "REST",
+        "Apollo Client",
+        "React Query",
+        "Pagination strategies",
+        "Validation alignment",
+        "Auditing alignment",
+        ".NET",
+        "HotChocolate"
+      ]
     },
     {
       "title": "Tooling and CI/CD",
-      "items": ["Azure DevOps", "Pipelines & releases", "Node.js", "Webpack", "Vite", "Docker", "Automated versioning", "Release hygiene"]
+      "items": [
+        "Azure DevOps",
+        "Pipelines & releases",
+        "Node.js",
+        "Webpack",
+        "Vite",
+        "Docker",
+        "Automated versioning",
+        "Release hygiene"
+      ]
     },
     {
       "title": "Quality and Security",
-      "items": ["Schema-driven validation", "Error surfacing frameworks", "SonarQube", "BlackDuck", "JWT", "OIDC", "Jest", "Cypress"]
+      "items": [
+        "Schema-driven validation",
+        "Error surfacing frameworks",
+        "SonarQube",
+        "BlackDuck",
+        "JWT",
+        "OIDC",
+        "Jest",
+        "Cypress"
+      ]
     },
     {
       "title": "Collaboration and Leadership",
-      "items": ["Cross-team alignment", "Lightweight RFCs", "Mentoring", "Onboarding", "Stakeholder demos", "Enablement"]
+      "items": [
+        "Cross-team alignment",
+        "Lightweight RFCs",
+        "Mentoring",
+        "Onboarding",
+        "Stakeholder demos",
+        "Enablement"
+      ]
     }
   ],
   "technical_stack": {
     "Languages": ["TypeScript", "JavaScript", "Java (academic)", "SQL basics"],
-    "Frameworks and Libraries": ["React", "Next.js", "React Native", "Expo", "MUI", "Zustand", "Apollo Client", "React Query"],
-    "APIs and Backend Collaboration": ["GraphQL", ".NET", "HotChocolate", "REST"],
-    "Tooling": ["Azure DevOps", "Vite", "Webpack", "Node.js", "Docker", "SonarQube", "BlackDuck"],
+    "Frameworks and Libraries": [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "MUI",
+      "Zustand",
+      "Apollo Client",
+      "React Query"
+    ],
+    "APIs and Backend Collaboration": [
+      "GraphQL",
+      ".NET",
+      "HotChocolate",
+      "REST"
+    ],
+    "Tooling": [
+      "Azure DevOps",
+      "Vite",
+      "Webpack",
+      "Node.js",
+      "Docker",
+      "SonarQube",
+      "BlackDuck"
+    ],
     "Testing": ["Jest", "Cypress"],
     "Auth and Security": ["JWT", "OIDC"],
     "Cloud and Infra Familiarity": ["AWS basics", "CI/CD patterns"]
