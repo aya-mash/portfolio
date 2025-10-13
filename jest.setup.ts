@@ -13,3 +13,15 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
 		dispatchEvent: () => false
 	}) as any;
 }
+
+// IntersectionObserver mock for framer-motion inView features
+if (typeof window !== 'undefined' && !(window as any).IntersectionObserver) {
+  (window as any).IntersectionObserver = class {
+    constructor(cb: any) { this._cb = cb; }
+    _cb: any;
+		observe() { /* Immediately invoke callback with intersecting true */ this._cb([{ isIntersecting: true }]); }
+		unobserve() { /* noop */ }
+		disconnect() { /* noop */ }
+		takeRecords() { return []; }
+  } as any;
+}

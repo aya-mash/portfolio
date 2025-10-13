@@ -10,16 +10,42 @@
   },
   "executive_summary": "Frontend engineer with about 5 years of experience delivering data-intensive applications in React and TypeScript. Built core capabilities for a Mercedes-Benz global master data and planning platform used across regions for production and supply chain operations. Drove faster releases, higher import reliability, and improved developer efficiency through platformized UI architecture, schema-driven validation, and CI modernization.",
   "key_achievements": [
-    "Established a reusable data UI platform for complex tables and forms, standardizing filters, pagination, and inline edit patterns to accelerate features and reduce review friction by about 30 percent on key modules.",
-    "Improved import reliability by about 25 percent through schema-driven validation, automated lookup reconciliation, and precise error surfacing before save.",
-    "Cut build and setup time by roughly 40 percent by delivering a Vite-based application boilerplate with environment management and automated versioning.",
-    "Strengthened reliability and governance by integrating static analysis and dependency scanning in CI, addressing issues earlier and improving audit readiness.",
-    "Aligned frontend and backend through explicit GraphQL contracts, validation semantics, auditing fields, and thin client abstractions to reduce client-side workarounds.",
-    "Optimized client-side performance using caching strategies and render tuning for data-heavy views, improving perceived load time on targeted flows.",
-    "Reduced support overhead by surfacing pre-save errors and batch error reports, lowering incidents related to import failures.",
-    "Accelerated onboarding and review by shipping documentation-first assets including READMEs, usage guides, and review checklists adopted across teams.",
-    "Delivered secure mobile access features including NFC interactions and OIDC authentication with telemetry for usage tracking.",
-    "Upgraded build pipelines and runtimes (Node and .NET) to improve stability, speed, and release predictability in Azure DevOps."
+    {
+      "heading": "Enterprise scale, real results",
+      "description": "Engineered React & React Native apps for global operations (access control, planning, supplier management) boosting user engagement by 60% and improving operational efficiency."
+    },
+    {
+      "heading": "Data flow reimagined",
+      "description": "Pioneered GraphQL adoption with .NET + HotChocolate, simplifying data access and improving responsiveness ~30% faster queries and leaner frontend logic."
+    },
+    {
+      "heading": "Design that accelerates delivery",
+      "description": "Standardized responsive, accessible, and localized UI systems (German/English) reducing design debt and improving sprint velocity by 25%."
+    },
+    {
+      "heading": "Shipped faster with fewer bugs",
+      "description": "Built a reusable data UI framework (tables/forms, filters, pagination incl. unknown totals, inline edit) ~30% leaner reviews and faster feature delivery across multiple modules."
+    },
+    {
+      "heading": "Data that just works",
+      "description": "Implemented schema-driven Excel imports with prevalidation, automatic lookup reconciliation, and precise error surfacing ~25% higher first-pass import success, fewer downstream fixes."
+    },
+    {
+      "heading": "DevEx that compounds",
+      "description": "Delivered a Vite-based boilerplate with environment management and automated versioning ~40% faster builds/onboarding, shorter CI cycles, predictable releases."
+    },
+    {
+      "heading": "Secure, compliant delivery",
+      "description": "Embedded static analysis and license/dependency scanning in CI; enforced JWT/OIDC flows stronger security posture and smoother audit checkpoints."
+    },
+    {
+      "heading": "Tighter API contracts",
+      "description": "Codesigned GraphQL queries/mutations and validation semantics; optimized payloads reduced client workarounds and improved rendering responsiveness."
+    },
+    {
+      "heading": "Mobile + identity",
+      "description": "Took an internal hub app from prototype to production with NFC, OIDC auth, telemetry and navigation more reliable access and better UX for field users."
+    }
   ],
   "core_technical_skills": {
     "Frontend": [

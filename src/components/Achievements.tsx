@@ -9,16 +9,21 @@ export function Achievements() {
   return (
     <SectionShell id="achievements" title="Key Impact" eyebrow="ACHIEVEMENTS">
       <div className="grid md:grid-cols-2 gap-6">
-        {key_achievements.map((a, i) => (
+        {key_achievements.map(({ heading, description }, i) => (
           <motion.div
-            key={i}
+            key={heading}
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: i * 0.05, duration: 0.5 }}
           >
             <NeonCard>
-              <p className="text-sm leading-relaxed text-slate-300">{a}</p>
+              <h3 className="font-semibold text-slate-100 mb-1 text-sm tracking-wide">
+                {heading}
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-300">
+                {description}
+              </p>
             </NeonCard>
           </motion.div>
         ))}

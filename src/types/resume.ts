@@ -36,7 +36,7 @@ export interface EducationCertItem {
 export interface ResumeData {
   personal_info: PersonalInfo;
   executive_summary: string;
-  key_achievements: string[];
+  key_achievements: { heading: string; description: string; }[];
   core_technical_skills: Record<string, string[]>; // category -> skills
   core_competencies?: { title: string; items: string[]; }[];
   technical_stack?: Record<string, string[]>;
