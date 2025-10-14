@@ -45,6 +45,10 @@
     {
       "heading": "Mobile + identity",
       "description": "Took an internal hub app from prototype to production with NFC, OIDC auth, telemetry and navigation more reliable access and better UX for field users."
+    },
+    {
+      "heading": "Secret history remediation automation",
+      "description": "Authored a mirror-based Git secret purge workflow (scan → inventory → deterministic replacements → dry-run → rewrite → verification) eliminating recurring legacy leaks and cutting remediation effort by ~75%."
     }
   ],
   "core_technical_skills": {
@@ -115,7 +119,8 @@
         "Webpack→Vite migrations",
         "Env & versioning automation",
         "Documentation",
-        "Review checklists"
+        "Review checklists",
+        "Secret remediation automation"
       ]
     },
     {
@@ -155,7 +160,8 @@
         "JWT",
         "OIDC",
         "Jest",
-        "Cypress"
+        "Cypress",
+        "Git history secret purging"
       ]
     },
     {
@@ -215,7 +221,8 @@
         "Embedded static analysis and dependency scanning in CI and strengthened authentication with encrypted tokens and OIDC where required to improve security posture.",
         "Delivered a Vite boilerplate with environment management and automated versioning to shorten build cycles and accelerate onboarding.",
         "Evolved an internal hub application from prototype to production-ready with NFC interactions and OIDC authentication for secure access and usage tracking.",
-        "Authored onboarding guides, READMEs, and review checklists; mentored junior developers; facilitated lightweight design reviews for cross-team alignment."
+        "Authored onboarding guides, READMEs, and review checklists; mentored junior developers; facilitated lightweight design reviews for cross-team alignment.",
+        "Automated full Git secret history remediation (mirror clone, scan, deterministic replace, dry-run, rewrite, verification) eliminating recurring scanner noise and standardizing response playbook."
       ],
       "technologies": [
         "React",
@@ -310,6 +317,13 @@
       "description": "Integrated static analysis and dependency license scanning into pipelines; remediated priority vulnerabilities and enforced guarded release policies.",
       "outcome": "Improved security posture and smoother audit checkpoints.",
       "technologies": ["Azure DevOps", "SonarQube", "BlackDuck", "Node.js"]
+    },
+    {
+      "title": "Secret History Remediation Automation",
+      "scope": "Internal",
+      "description": "Mirror-based Git history purge workflow (scan → inventory → replacement map → dry-run → rewrite → verification) with scripts for gitleaks and git filter-repo orchestration.",
+      "outcome": "Eliminated recurring legacy secret detections and reduced remediation time per incident by ~75%.",
+      "technologies": ["PowerShell", "gitleaks", "git filter-repo", "Automation Scripts"]
     },
     {
       "title": "Material Pricing Administration",
@@ -413,6 +427,7 @@
     "Graduate development training in agile and DevOps practices.",
     "Recognized for delivery excellence and documentation that improves cross-team alignment.",
     "Mentorship and workshop facilitation for onboarding and pattern adoption.",
-    "Experienced in cross-cultural collaboration with distributed teams across regions using documentation-first alignment, async reviews, and clear ownership."
+    "Experienced in cross-cultural collaboration with distributed teams across regions using documentation-first alignment, async reviews, and clear ownership.",
+    "Proactively drove platform-level secret remediation automation creating a reusable, low-risk path for future incidents."
   ]
 }
