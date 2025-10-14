@@ -8,47 +8,47 @@
     "email": "ayabulelamahlathini@gmail.com",
     "phone": "+27 84 908 6628"
   },
-  "executive_summary": "Frontend engineer with about 5 years of experience delivering data-intensive applications in React and TypeScript. Built core capabilities for a Mercedes-Benz global master data and planning platform used across regions for production and supply chain operations. Drove faster releases, higher import reliability, and improved developer efficiency through platformized UI architecture, schema-driven validation, and CI modernization.",
+  "executive_summary": "Frontend engineer (~5 years) delivering data-intensive React + TypeScript applications at global scale. Led core UI/platform capabilities for a multi‑region internal data management & planning platform. Improved delivery speed, import reliability, and developer effectiveness through reusable data UI patterns, schema‑driven validation, and build/CI modernization.",
   "key_achievements": [
     {
-      "heading": "Enterprise scale, real results",
-      "description": "Engineered React & React Native apps for global operations (access control, planning, supplier management) boosting user engagement by 60% and improving operational efficiency."
+      "heading": "Enterprise scale impact",
+      "description": "Engineered React & React Native apps supporting global internal operations (access, planning, supplier-facing workflows) improving usability and operational efficiency."
     },
     {
-      "heading": "Data flow reimagined",
-      "description": "Pioneered GraphQL adoption with .NET + HotChocolate, simplifying data access and improving responsiveness ~30% faster queries and leaner frontend logic."
+      "heading": "GraphQL & data simplification",
+      "description": "Introduced GraphQL with .NET HotChocolate to streamline data access, reducing client complexity and improving perceived responsiveness."
     },
     {
-      "heading": "Design that accelerates delivery",
-      "description": "Standardized responsive, accessible, and localized UI systems (German/English) reducing design debt and improving sprint velocity by 25%."
+      "heading": "Design & accessibility systems",
+      "description": "Standardized responsive, accessible, localized (DE/EN) UI patterns, shrinking design debt and increasing delivery consistency."
     },
     {
-      "heading": "Shipped faster with fewer bugs",
-      "description": "Built a reusable data UI framework (tables/forms, filters, pagination incl. unknown totals, inline edit) ~30% leaner reviews and faster feature delivery across multiple modules."
+      "heading": "Reusable data UI framework",
+      "description": "Created shared tables/forms (filters, resilient pagination, inline edit) accelerating feature throughput across multiple modules."
     },
     {
-      "heading": "Data that just works",
-      "description": "Implemented schema-driven Excel imports with prevalidation, automatic lookup reconciliation, and precise error surfacing ~25% higher first-pass import success, fewer downstream fixes."
+      "heading": "Reliable data imports",
+      "description": "Implemented schema-driven file import pipeline with early validation, automatic lookups, and clear error surfacing improving first-pass success."
     },
     {
-      "heading": "DevEx that compounds",
-      "description": "Migrated from webpack and delivered a Vite-based boilerplate with configurable layout, i18n, authentication, environment management and automated versioning ~40% faster builds/onboarding, shorter CI cycles, predictable releases."
+      "heading": "Modernized build & DX",
+      "description": "Delivered Vite-based boilerplate (layout, i18n, auth, env mgmt, automated versioning) achieving materially faster builds and onboarding."
     },
     {
-      "heading": "Secure, compliant delivery",
-      "description": "Embedded static analysis and license/dependency scanning in CI; enforced JWT/OIDC flows stronger security posture and smoother audit checkpoints."
+      "heading": "Automated quality & security gates",
+      "description": "Embedded static analysis and dependency/license scanning plus standardized auth patterns (OIDC/JWT) strengthening security posture."
     },
     {
-      "heading": "Tighter API contracts",
-      "description": "Codesigned GraphQL queries/mutations and validation semantics; optimized payloads reduced client workarounds and improved rendering responsiveness."
+      "heading": "Stable API contracts",
+      "description": "Collaborated on GraphQL schema & validation semantics; optimized payloads reduced client workarounds and improved UI responsiveness."
     },
     {
-      "heading": "Mobile + identity",
-      "description": "Took an internal hub app from prototype to production with NFC, OIDC auth, telemetry and navigation more reliable access and better UX for field users."
+      "heading": "Mobile enablement",
+      "description": "Advanced an internal hub app from prototype to production with NFC, modern auth, telemetry and robust navigation improving field UX."
     },
     {
-      "heading": "Secret history remediation automation",
-      "description": "Authored a mirror-based Git secret purge workflow (scan → inventory → deterministic replacements → dry-run → rewrite → verification) eliminating recurring legacy leaks and cutting remediation effort by ~75%."
+      "heading": "Repository hygiene automation",
+      "description": "Authored automated secret scanning & safe history rewrite workflow (scan → inventory → deterministic replacement → dry-run → verified rewrite) markedly reducing manual remediation effort."
     }
   ],
   "core_technical_skills": {
@@ -213,16 +213,16 @@
       "role": "Frontend Engineer, Global master data and planning platform",
       "start_date": "2021-12",
       "end_date": "Present",
-      "scope": "Frontend ownership for a web platform used across regions for production and supply chain planning, supporting high-volume master data updates and frequent file imports.",
+  "scope": "Frontend ownership for a multi-region internal planning & data management platform handling large-scale structured data updates and recurring file imports.",
       "responsibilities": [
         "Consolidated table and form experiences into a reusable UI foundation with consistent filters, pagination, inline editing, and shared toolbars to speed delivery.",
-        "Implemented schema-driven Excel imports with early validation, automated lookup reconciliation, and precise error messages to increase first-pass success.",
+  "Implemented schema-driven file imports with early validation, automated lookup reconciliation, and clear error messages to improve first-pass success.",
         "Co-designed GraphQL queries and mutations with backend teams and aligned validation and auditing fields to create stable contracts and predictable releases.",
-        "Embedded static analysis and dependency scanning in CI and strengthened authentication with encrypted tokens and OIDC where required to improve security posture.",
+  "Embedded automated static code analysis & dependency scanning in CI and strengthened authentication with modern identity standards (OIDC/JWT).",
         "Delivered a Vite boilerplate with environment management and automated versioning to shorten build cycles and accelerate onboarding.",
         "Evolved an internal hub application from prototype to production-ready with NFC interactions and OIDC authentication for secure access and usage tracking.",
         "Authored onboarding guides, READMEs, and review checklists; mentored junior developers; facilitated lightweight design reviews for cross-team alignment.",
-        "Automated full Git secret history remediation (mirror clone, scan, deterministic replace, dry-run, rewrite, verification) eliminating recurring scanner noise and standardizing response playbook."
+  "Automated repository hygiene & secret scanning workflow (mirror clone, scan, deterministic replace, dry-run, rewrite, verification) standardizing remediation playbook."
       ],
       "technologies": [
         "React",
@@ -319,10 +319,10 @@
       "technologies": ["Azure DevOps", "SonarQube", "BlackDuck", "Node.js"]
     },
     {
-      "title": "Secret History Remediation Automation",
+      "title": "Repository Hygiene & Secret Scanning Automation",
       "scope": "Internal",
-      "description": "Mirror-based Git history purge workflow (scan → inventory → replacement map → dry-run → rewrite → verification) with scripts for gitleaks and git filter-repo orchestration.",
-      "outcome": "Eliminated recurring legacy secret detections and reduced remediation time per incident by ~75%.",
+      "description": "Automated scanning and safe rewrite workflow (scan → inventory → replacement map → dry-run → rewrite → verification) orchestrating gitleaks + git filter-repo with deterministic replacement mapping.",
+      "outcome": "Standardized remediation path and significantly reduced manual effort per incident.",
       "technologies": ["PowerShell", "gitleaks", "git filter-repo", "Automation Scripts"]
     },
     {
