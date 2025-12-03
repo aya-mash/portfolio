@@ -35,6 +35,14 @@
       "description": "Delivered Vite-based boilerplate (layout, i18n, auth, env mgmt, automated versioning) achieving materially faster builds and onboarding."
     },
     {
+      "heading": "Containerized frontend delivery",
+      "description": "Dockerized the planning platform UI with multi-stage builds, nginx hardening, and health-checked runtime configs, enabling migration onto the internal Azure Cloud Compute Platform."
+    },
+    {
+      "heading": "GitHub Actions migration",
+      "description": "Rebuilt Azure Pipelines workflows as reusable GitHub Actions matrices with caching, gated releases, and shared security scans, cutting CI time while aligning with enterprise governance."
+    },
+    {
       "heading": "Automated quality & security gates",
       "description": "Embedded static analysis and dependency/license scanning plus standardized auth patterns (OIDC/JWT) strengthening security posture."
     },
@@ -77,10 +85,12 @@
     ],
     "Tooling/CI/CD": [
       "Azure DevOps",
+      "GitHub Actions",
       "Node.js",
       "Vite",
       "Webpack",
       "Docker",
+      "Containerized delivery",
       "Automated versioning",
       "Release hygiene"
     ],
@@ -141,11 +151,13 @@
       "title": "Tooling and CI/CD",
       "items": [
         "Azure DevOps",
+        "GitHub Actions workflows",
         "Pipelines & releases",
         "Node.js",
         "Webpack",
         "Vite",
         "Docker",
+        "Containerized deployments",
         "Automated versioning",
         "Release hygiene"
       ]
@@ -196,16 +208,23 @@
     ],
     "Tooling": [
       "Azure DevOps",
+      "GitHub Actions",
       "Vite",
       "Webpack",
       "Node.js",
       "Docker",
+      "AWS Amplify",
       "SonarQube",
       "BlackDuck"
     ],
-    "Testing": ["Jest", "Cypress"],
+    "Testing": ["Jest", "Cypress", "Vitest", "Playwright"],
     "Auth and Security": ["JWT", "OIDC"],
-    "Cloud and Infra Familiarity": ["AWS basics", "CI/CD patterns"]
+    "Cloud and Infra Familiarity": [
+      "AWS basics",
+      "AWS Amplify Hosting",
+      "Azure Cloud Compute Platform",
+      "CI/CD patterns"
+    ]
   },
   "professional_experience": [
     {
@@ -276,6 +295,50 @@
     }
   ],
   "select_projects": [
+    {
+      "title": "Customer Spending Insights Dashboard",
+      "scope": "Public",
+      "description": "React + TypeScript analytics app with token-based theming, React Query data layer, MSW-powered mocks, and Playwright/Vitest coverage; ships as a secure PWA with charts, PDF receipts, and offline fallbacks.",
+      "outcome": "Demonstrates end-to-end product delivery from architecture and testing to AWS Amplify hosting with Docker and nginx hardening.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "React Query",
+        "MSW",
+        "Recharts",
+        "Docker",
+        "AWS Amplify"
+      ],
+      "url": "https://develop.d2pazk2z2et2fb.amplifyapp.com/"
+    },
+    {
+      "title": "Containerized Frontend on Azure Compute",
+      "scope": "Internal",
+      "description": "Containerized the multi-region planning UI using multi-stage Docker builds, nginx hardening, and health-checked workloads, then migrated hosting to the internal Azure Cloud Compute Platform.",
+      "outcome": "Improved deployment parity, simplified scaling, and enabled platform guardrails (runtime config, security headers, observability hooks).",
+      "technologies": [
+        "Docker",
+        "nginx",
+        "Azure DevOps",
+        "Azure Cloud Compute",
+        "React",
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Azure Pipelines → GitHub Actions Migration",
+      "scope": "Internal",
+      "description": "Rebuilt the CI/CD system for the planning platform, porting Azure Pipelines stages into reusable GitHub Actions workflows with matrix testing, build caching, artifact reuse, and guarded production deployments.",
+      "outcome": "Cut pipeline time, aligned with enterprise GitHub governance, and improved release visibility across environments.",
+      "technologies": [
+        "GitHub Actions",
+        "Azure DevOps",
+        "Node.js",
+        "React",
+        "Testing automation"
+      ]
+    },
     {
       "title": "Global Master Data and Planning Platform (Web)",
       "scope": "Internal",
