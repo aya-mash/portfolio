@@ -26,8 +26,8 @@ export function ProjectsGallery() {
         {filtered.map((p, i) => {
           const clickable = p.scope === 'Public' && p.url;
           const content = (
-            <NeonCard>
-              <div className="flex flex-col gap-3">
+            <NeonCard className="h-full flex flex-col">
+              <div className="flex flex-col gap-3 flex-grow">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <h3 className="text-sm font-semibold tracking-wide uppercase font-mono text-soft group-hover:text-neon-blue transition-colors" title={p.title}>{p.title}</h3>
@@ -39,14 +39,16 @@ export function ProjectsGallery() {
                     </span>
                   )}
                 </div>
-                <p className="text-sm leading-relaxed text-soft/85">{p.description}</p>
-                <p className="text-xs text-neon-green/80 font-mono">{p.outcome}</p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {p.technologies.map(t => (
-                    <span key={t} className="px-2 py-1 bg-white/5 rounded-md text-[10px] font-mono tracking-wider uppercase">
-                      {t}
-                    </span>
-                  ))}
+                <p className="text-sm leading-relaxed text-soft/85 flex-grow">{p.description}</p>
+                <div className="mt-auto pt-2 space-y-3">
+                  <p className="text-xs text-neon-green/80 font-mono">{p.outcome}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.technologies.map(t => (
+                      <span key={t} className="px-2 py-1 bg-white/5 rounded-md text-[10px] font-mono tracking-wider uppercase">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </NeonCard>
@@ -56,16 +58,16 @@ export function ProjectsGallery() {
               key={p.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.55, delay: i * 0.04 }}
-              className={clickable ? 'group focus-within:ring-2 focus-within:ring-neon-blue/70 rounded-md' : undefined}
+              className={`h-full ${clickable ? 'group focus-within:ring-2 focus-within:ring-neon-blue/70 rounded-md' : ''}`}
             >
               {clickable ? (
                 <a
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block outline-none focus-visible:ring-2 focus-visible:ring-neon-blue/70 rounded-md"
+                  className="block h-full outline-none focus-visible:ring-2 focus-visible:ring-neon-blue/70 rounded-md"
                   aria-label={`${p.title} repository (opens in new tab)`}
                 >
                   {content}

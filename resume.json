@@ -222,7 +222,7 @@
   "scope": "Frontend ownership for a multi-region internal planning & data management platform handling large-scale structured data updates and recurring file imports.",
       "responsibilities": [
         "Consolidated table and form experiences into a reusable UI foundation, reducing feature delivery time by ~30% and unifying UX across 10+ modules.",
-        "Engineered a schema-driven import pipeline with pre-validation, increasing first-pass data acceptance rates by 40% and eliminating manual data correction tickets.",
+        "Engineered a schema-driven import pipeline with pre-validation, increasing first-pass data acceptance rates by 60% and eliminating manual data correction tickets.",
         "Standardized GraphQL schema and validation contracts, reducing frontend-backend integration bugs and enabling independent release cycles.",
         "Secured the platform by embedding automated static analysis and OIDC/JWT authentication, achieving 100% compliance with internal security audits.",
         "Architected a standardized Vite boilerplate, cutting build times by 40% (from 40s to <1s start time) and reducing new service setup time from days to hours.",
@@ -441,14 +441,6 @@
       "outcome": "Showcases rapid ideation and user-centered design for social impact.",
       "technologies": ["Web", "Mobile"],
       "url": "https://github.com/aya-mash/findadoctor"
-    },
-    {
-      "title": "Portfolio Website",
-      "scope": "Public",
-      "description": "Personal site and project hub with clean layouts and outbound links to work and credentials.",
-      "outcome": "Centralized presence for showcasing projects and achievements.",
-      "technologies": ["Modern web stack", "CI/CD"],
-      "url": "https://github.com/aya-mash/portfolio"
     }
   ],
   "education_certifications": [
