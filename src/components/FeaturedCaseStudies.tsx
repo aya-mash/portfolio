@@ -41,15 +41,15 @@ function ArchNode({
     color === "neon-blue"
       ? "text-neon-blue border-neon-blue bg-neon-blue/10"
       : color === "neon-green"
-      ? "text-neon-green border-neon-green bg-neon-green/10"
-      : "text-slate-400 border-white/20 bg-black";
+        ? "text-neon-green border-neon-green bg-neon-green/10"
+        : "text-slate-400 border-white/20 bg-black";
 
   const dotClass =
     color === "neon-blue"
       ? "bg-neon-blue"
       : color === "neon-green"
-      ? "bg-neon-green"
-      : "bg-slate-500";
+        ? "bg-neon-green"
+        : "bg-slate-500";
 
   return (
     <div className="relative flex items-center gap-4 pl-2">
@@ -86,8 +86,8 @@ const CASE_STUDIES: CaseStudy[] = [
       <div className="flex flex-col md:flex-row gap-8 items-center h-full">
         <div className="flex-1">
           <p className="text-sm text-slate-400 mb-6 leading-relaxed">
-            A centralized ecosystem reducing redundancy. Validations, components,
-            and theming are standardized at the root.
+            A centralized ecosystem reducing redundancy. Validations,
+            components, and theming are standardized at the root.
           </p>
           <div className="flex gap-4 text-xs font-mono text-slate-500">
             <div className="flex items-center gap-2">
@@ -200,19 +200,9 @@ const CASE_STUDIES: CaseStudy[] = [
     architecture: (
       <div className="space-y-3 relative flex-grow pt-2">
         <div className="absolute left-5 top-4 bottom-4 w-px bg-gradient-to-b from-neon-blue/50 to-transparent dashed-line" />
-        <ArchNode
-          label="Platform Config"
-          sub="Vite Plugins"
-          active
-        />
-        <ArchNode
-          label="DX Layer"
-          sub="Tokens · i18n"
-        />
-        <ArchNode
-          label="Security"
-          sub="OIDC · JWT"
-        />
+        <ArchNode label="Platform Config" sub="Vite Plugins" active />
+        <ArchNode label="DX Layer" sub="Tokens · i18n" />
+        <ArchNode label="Security" sub="OIDC · JWT" />
       </div>
     ),
   },
@@ -228,23 +218,14 @@ const CASE_STUDIES: CaseStudy[] = [
     architecture: (
       <div className="space-y-3 relative flex-grow pt-2">
         <div className="absolute left-5 top-4 bottom-4 w-px bg-gradient-to-b from-neon-green/50 to-transparent dashed-line" />
-        <ArchNode
-          label="Guardrails"
-          sub="Lint · Secrets"
-          color="neon-green"
-        />
+        <ArchNode label="Guardrails" sub="Lint · Secrets" color="neon-green" />
         <ArchNode
           label="CI Matrix"
           sub="Sonar · BlackDuck"
           color="neon-green"
           active
         />
-        <ArchNode
-          label="Audit"
-          sub="SBOM · Logs"
-          color="neon-green"
-          last
-        />
+        <ArchNode label="Audit" sub="SBOM · Logs" color="neon-green" last />
       </div>
     ),
   },
@@ -258,40 +239,50 @@ const CASE_STUDIES: CaseStudy[] = [
     icon: FileSpreadsheet,
     technologies: ["React", ".NET", "Postgres COPY", "Resiliency Patt."],
     architecture: (
-        <div className="relative flex-grow flex flex-col justify-center space-y-2">
-            <div className="p-2 rounded border border-white/10 bg-white/5 flex items-center justify-between">
-            <div className="flex flex-col">
-                <span className="text-[9px] font-mono text-purple-400">CLIENT</span>
-                <span className="text-[10px] font-bold text-slate-200">Preview</span>
-            </div>
-            <span className="text-[9px] text-slate-500">→</span>
-            <div className="flex flex-col text-right">
-                <span className="text-[9px] font-mono text-purple-400">API</span>
-                <span className="text-[10px] font-bold text-slate-200">Async</span>
-            </div>
-            </div>
-
-            <div className="flex-1 w-0.5 bg-gradient-to-b from-purple-500/50 to-transparent mx-auto" />
-
-            <div className="p-2 rounded border border-white/10 bg-white/5 space-y-1">
-            <div className="text-[9px] font-mono text-slate-400 text-center uppercase tracking-wider">Processing</div>
-            <div className="flex gap-2">
-                <span className="flex-1 py-1 text-center bg-purple-500/10 rounded text-[9px] font-mono text-purple-300 border border-purple-500/20">Hangfire</span>
-                <span className="flex-1 py-1 text-center bg-purple-500/10 rounded text-[9px] font-mono text-purple-300 border border-purple-500/20">Npgsql</span>
-            </div>
-            </div>
-
-            <div className="flex-1 w-0.5 bg-gradient-to-b from-transparent to-purple-500/50 mx-auto" />
-
-            <div className="p-2 rounded border border-white/10 bg-white/5 flex items-center justify-between">
-            <div className="flex flex-col">
-                <span className="text-[9px] font-mono text-purple-400">DB</span>
-                <span className="text-[10px] font-bold text-slate-200">Stage</span>
-            </div>
-            <span className="text-[9px] font-mono text-neon-green border border-neon-green/30 bg-neon-green/10 px-2 rounded">Upsert</span>
-            </div>
+      <div className="relative flex-grow flex flex-col justify-center space-y-2">
+        <div className="p-2 rounded border border-white/10 bg-white/5 flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="text-[9px] font-mono text-purple-400">CLIENT</span>
+            <span className="text-[10px] font-bold text-slate-200">
+              Preview
+            </span>
+          </div>
+          <span className="text-[9px] text-slate-500">→</span>
+          <div className="flex flex-col text-right">
+            <span className="text-[9px] font-mono text-purple-400">API</span>
+            <span className="text-[10px] font-bold text-slate-200">Async</span>
+          </div>
         </div>
-    )
+
+        <div className="flex-1 w-0.5 bg-gradient-to-b from-purple-500/50 to-transparent mx-auto" />
+
+        <div className="p-2 rounded border border-white/10 bg-white/5 space-y-1">
+          <div className="text-[9px] font-mono text-slate-400 text-center uppercase tracking-wider">
+            Processing
+          </div>
+          <div className="flex gap-2">
+            <span className="flex-1 py-1 text-center bg-purple-500/10 rounded text-[9px] font-mono text-purple-300 border border-purple-500/20">
+              Hangfire
+            </span>
+            <span className="flex-1 py-1 text-center bg-purple-500/10 rounded text-[9px] font-mono text-purple-300 border border-purple-500/20">
+              Npgsql
+            </span>
+          </div>
+        </div>
+
+        <div className="flex-1 w-0.5 bg-gradient-to-b from-transparent to-purple-500/50 mx-auto" />
+
+        <div className="p-2 rounded border border-white/10 bg-white/5 flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="text-[9px] font-mono text-purple-400">DB</span>
+            <span className="text-[10px] font-bold text-slate-200">Stage</span>
+          </div>
+          <span className="text-[9px] font-mono text-neon-green border border-neon-green/30 bg-neon-green/10 px-2 rounded">
+            Upsert
+          </span>
+        </div>
+      </div>
+    ),
   },
 ];
 
@@ -299,7 +290,7 @@ export function FeaturedCaseStudies() {
   const [flippedMap, setFlippedMap] = useState<Record<number, boolean>>({});
 
   const toggle = (i: number) => {
-    setFlippedMap(prev => ({ ...prev, [i]: !prev[i] }));
+    setFlippedMap((prev) => ({ ...prev, [i]: !prev[i] }));
   };
 
   return (
@@ -311,7 +302,7 @@ export function FeaturedCaseStudies() {
       <div className="grid md:grid-cols-2 gap-6">
         {CASE_STUDIES.map((study, i) => {
           const isFlipped = !!flippedMap[i];
-          
+
           return (
             <motion.div
               key={study.title}
@@ -326,12 +317,17 @@ export function FeaturedCaseStudies() {
                 className="relative w-full h-full"
                 initial={false}
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
+                transition={{
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                }}
                 style={{ transformStyle: "preserve-3d" }}
                 onClick={() => toggle(i)}
               >
                 {/* Front Face */}
-                <div 
+                <div
                   className="absolute inset-0 cursor-pointer"
                   style={{ backfaceVisibility: "hidden" }}
                 >
@@ -380,20 +376,24 @@ export function FeaturedCaseStudies() {
                 </div>
 
                 {/* Back Face */}
-                <div 
+                <div
                   className="absolute inset-0 cursor-pointer"
-                  style={{ 
-                    backfaceVisibility: "hidden", 
-                    transform: "rotateY(180deg)" 
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
                   }}
                 >
                   <SpotlightEffect className="h-full p-6 flex flex-col bg-slate-950/80">
                     <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-2">
-                        <div className="text-xs font-mono font-bold text-neon-blue uppercase tracking-wider">System Architecture</div>
-                        <div className="text-[10px] text-slate-500">{study.category}</div>
+                      <div className="text-xs font-mono font-bold text-neon-blue uppercase tracking-wider">
+                        System Architecture
+                      </div>
+                      <div className="text-[10px] text-slate-500">
+                        {study.category}
+                      </div>
                     </div>
                     <div className="flex-grow relative">
-                         {study.architecture}
+                      {study.architecture}
                     </div>
                   </SpotlightEffect>
                 </div>
