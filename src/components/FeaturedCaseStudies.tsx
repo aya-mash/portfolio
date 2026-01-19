@@ -76,7 +76,7 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     title: "UI Architecture & Standardization",
     category: "Core Systems Engineering",
-    metric: "-55%",
+    metric: "-30%",
     metricLabel: "Boilerplate Reduction",
     description:
       "Architected the enterprise UI ecosystem over 5 years. Delivered a localized Design System, reusable component library, and standardized validation patterns (Formik/Yup/MUI), slashing feature delivery time from 3+ weeks to 2 days.",
