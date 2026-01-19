@@ -1,4 +1,5 @@
 import { Hero } from '@/components/Hero';
+import { FeaturedCaseStudies } from '@/components/FeaturedCaseStudies';
 import { Achievements } from '@/components/Achievements';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import { SkillsMatrix } from '@/components/SkillsMatrix';
@@ -11,11 +12,12 @@ export default function HomePage() {
   return (
     <main className="relative">
       <Hero />
-      <Achievements />
-      <ExperienceTimeline />
-      <SkillsMatrix />
+      <FeaturedCaseStudies />
       <ProjectsGallery />
+      <SkillsMatrix />
+      <ExperienceTimeline />
       <EducationCerts />
+      <Achievements />
       <AdditionalInfo />
       <ContactSection />
       <footer className="py-16 text-center text-[11px] tracking-widest text-slate-500 font-mono">

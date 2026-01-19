@@ -16,7 +16,7 @@ export function ProjectsGallery() {
     return select_projects;
   }, [tab, select_projects]);
   return (
-    <SectionShell id="projects" title="Select Projects" eyebrow="PREVIOUS WORK">
+    <SectionShell id="projects" title="Technical Projects & Experiments" eyebrow="ADDITIONAL WORK">
       <div className="flex flex-wrap gap-2 mb-8 text-[11px] font-mono uppercase tracking-wider">
         <button onClick={() => setTab('all')} className={`px-3 py-1 rounded-md border ${tab==='all' ? 'border-neon-pink/60 text-neon-pink' : 'border-white/10 text-soft hover:border-white/25'}`}>All</button>
         <button onClick={() => setTab('public')} className={`px-3 py-1 rounded-md border ${tab==='public' ? 'border-neon-pink/60 text-neon-pink' : 'border-white/10 text-soft hover:border-white/25'}`}>Public</button>
