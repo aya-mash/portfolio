@@ -310,7 +310,7 @@ export function FeaturedCaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`h-[340px] ${i === 0 ? "md:col-span-2" : ""}`}
+              className={`h-[480px] md:h-[340px] ${i === 0 ? "md:col-span-2" : ""}`}
               style={{ perspective: "1000px" }}
             >
               <motion.div
