@@ -11,20 +11,22 @@ import { ContactSection } from "@/components/ContactSection";
 
 export default function HomePage() {
   return (
-    <main className="relative">
+    <>
       <Navbar />
-      <Hero />
-      <FeaturedCaseStudies />
-      <ProjectsGallery />
-      <SkillsMatrix />
-      <ExperienceTimeline />
-      <EducationCerts />
-      <Achievements />
-      <AdditionalInfo />
-      <ContactSection />
+      <main className="relative">
+        <Hero />
+        <FeaturedCaseStudies />
+        <ProjectsGallery />
+        <SkillsMatrix />
+        <ExperienceTimeline />
+        <EducationCerts />
+        <Achievements />
+        <AdditionalInfo />
+        <ContactSection />
+      </main>
       <footer className="py-16 text-center text-[11px] tracking-widest text-slate-500 font-mono">
-        Aya Mash · {new Date().getFullYear()}
+        Aya Mash &middot; {new Date().getFullYear()}
       </footer>
-    </main>
+    </>
   );
 }

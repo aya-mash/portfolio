@@ -71,6 +71,7 @@ export function Navbar() {
       `}</style>
       <AnimatePresence>
         <motion.nav
+          aria-label="Main navigation"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="fixed bottom-4 md:bottom-auto md:top-0 left-0 right-0 z-50 flex justify-center md:pt-4 pointer-events-none"

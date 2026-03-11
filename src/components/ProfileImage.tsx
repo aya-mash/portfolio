@@ -8,7 +8,7 @@ interface ProfileImageProps {
   size?: number;
 }
 
-export function ProfileImage({ src = '/profile.jpg', alt = 'Profile portrait', size = 200 }: ProfileImageProps) {
+export function ProfileImage({ src = '/profile.jpg', alt = 'Ayabulela Mahlathini, Frontend Engineer', size = 200 }: ProfileImageProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}

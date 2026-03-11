@@ -3,7 +3,7 @@
 import { SectionShell } from "./SectionShell";
 import { SpotlightEffect } from "./SpotlightEffect";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   Cpu,
   Zap,
@@ -288,10 +288,32 @@ const CASE_STUDIES: CaseStudy[] = [
 
 export function FeaturedCaseStudies() {
   const [flippedMap, setFlippedMap] = useState<Record<number, boolean>>({});
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  const toggle = (i: number) => {
-    setFlippedMap((prev) => ({ ...prev, [i]: !prev[i] }));
-  };
+  useEffect(() => {
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleMouseEnter = useCallback(
+    (i: number) => {
+      if (!isTouchDevice) setFlippedMap((prev) => ({ ...prev, [i]: true }));
+    },
+    [isTouchDevice]
+  );
+
+  const handleMouseLeave = useCallback(
+    (i: number) => {
+      if (!isTouchDevice) setFlippedMap((prev) => ({ ...prev, [i]: false }));
+    },
+    [isTouchDevice]
+  );
+
+  const handleClick = useCallback(
+    (i: number) => {
+      if (isTouchDevice) setFlippedMap((prev) => ({ ...prev, [i]: !prev[i] }));
+    },
+    [isTouchDevice]
+  );
 
   return (
     <SectionShell
@@ -311,10 +333,13 @@ export function FeaturedCaseStudies() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`h-[480px] md:h-[340px] ${i === 0 ? "md:col-span-2" : ""}`}
-              style={{ perspective: "1000px" }}
+              style={{ perspective: 1000 }}
+              onMouseEnter={() => handleMouseEnter(i)}
+              onMouseLeave={() => handleMouseLeave(i)}
+              onClick={() => handleClick(i)}
             >
               <motion.div
-                className="relative w-full h-full"
+                className="relative w-full h-full [transform-style:preserve-3d]"
                 initial={false}
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
                 transition={{
@@ -323,13 +348,10 @@ export function FeaturedCaseStudies() {
                   stiffness: 260,
                   damping: 20,
                 }}
-                style={{ transformStyle: "preserve-3d" }}
-                onClick={() => toggle(i)}
               >
                 {/* Front Face */}
                 <div
-                  className="absolute inset-0 cursor-pointer"
-                  style={{ backfaceVisibility: "hidden" }}
+                  className="absolute inset-0 cursor-pointer [backface-visibility:hidden] [transform:rotateY(0deg)]"
                 >
                   <SpotlightEffect className="h-full p-6 flex flex-col">
                     <div className="flex items-start justify-between mb-4">
@@ -377,11 +399,7 @@ export function FeaturedCaseStudies() {
 
                 {/* Back Face */}
                 <div
-                  className="absolute inset-0 cursor-pointer"
-                  style={{
-                    backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
-                  }}
+                  className="absolute inset-0 cursor-pointer [backface-visibility:hidden] [transform:rotateY(180deg)]"
                 >
                   <SpotlightEffect className="h-full p-6 flex flex-col bg-slate-950/80">
                     <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-2">
