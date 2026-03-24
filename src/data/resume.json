@@ -8,7 +8,7 @@
     "linkedin": "https://www.linkedin.com/in/ayabulela-mahlathini",
     "email": "ayabulelamahlathini@gmail.com"
   },
-  "executive_summary": "Software Engineer specializing in architecting scalable React ecosystems and standardizing developer experience. Expert in migrating legacy build systems (Webpack to Vite), optimizing high-scale data grids, and enforcing security compliance through automated CI/CD pipelines. Proven track record of reducing build times by 40% and delivering robust, accessibility-first design systems for enterprise operations.",
+  "executive_summary": "Engineer with 5 years of full-stack ownership across enterprise SOA platforms processing millions of records globally. Built on an AWS internship foundation, I have spent the last 4 years at Mercedes-Benz designing high-performance UIs, automating end-to-end deployment pipelines, and turning error-prone manual workflows into self-service systems that permanently reduced support load. I take ownership of problems from root cause to production, whether that means eliminating browser freezes on million-row datasets, building CI/CD from scratch, mentoring new hires or stepping up to other roles when the team needs it.",
   "key_achievements": [
     {
       "heading": "Frontend Architecture & Standardization",
@@ -225,7 +225,7 @@
       "role": "Software Engineer, Global Production & Reporting Platform",
       "start_date": "2021-12",
       "end_date": "Present",
-  "scope": "Frontend ownership for a multi-region internal planning & data management platform handling large-scale structured data updates and recurring file imports.",
+      "scope": "Frontend ownership for a multi-region internal planning & data management platform handling large-scale structured data updates and recurring file imports.",
       "responsibilities": [
         "Consolidated table and form experiences into a reusable UI foundation, reducing feature delivery time by ~30% and unifying UX across 50+ modules.",
         "Engineered a schema-driven import pipeline with pre-validation, increasing first-pass data acceptance rates by 60% and eliminating manual data correction tickets.",
@@ -415,7 +415,12 @@
       "scope": "Internal",
       "description": "Automated scanning and safe rewrite workflow (scan, inventory, replacement map, dry-run, rewrite, verification) orchestrating gitleaks + git filter-repo with deterministic replacement mapping.",
       "outcome": "Standardized remediation path and significantly reduced manual effort per incident.",
-      "technologies": ["PowerShell", "gitleaks", "git filter-repo", "Automation Scripts"]
+      "technologies": [
+        "PowerShell",
+        "gitleaks",
+        "git filter-repo",
+        "Automation Scripts"
+      ]
     },
     {
       "title": "Material Pricing Administration",
