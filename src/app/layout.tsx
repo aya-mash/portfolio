@@ -14,10 +14,10 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-const SITE_URL = 'https://ayamash.dev';
+const SITE_URL = 'https://amash.tech';
 const TITLE = 'Ayabulela Mahlathini — Software Engineer';
 const DESCRIPTION =
-  'Software Engineer specializing in scalable React ecosystems, design systems, and developer experience. Explore my interactive desktop-themed portfolio.';
+  'Software engineer with 5 years of full-stack ownership across enterprise platforms. Specializing in scalable React ecosystems, design systems, and developer experience.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Ayabulela Mahlathini', url: SITE_URL }],
   creator: 'Ayabulela Mahlathini',
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
         url: '/avatar.png',
         width: 800,
         height: 800,
-        alt: 'Ayabulela Mahlathini',
+        alt: 'Ayabulela Mahlathini — Software Engineer',
       },
     ],
   },
@@ -70,6 +73,20 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ayabulela Mahlathini',
+  alternateName: 'Aya',
+  url: SITE_URL,
+  jobTitle: 'Software Engineer',
+  description: DESCRIPTION,
+  sameAs: [
+    'https://github.com/aya-mash',
+    'https://www.linkedin.com/in/ayabulela-mahlathini',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -77,7 +94,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1495,6 +1495,47 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* Wallpaper CSS fallback (no WebGL) */
+.wallpaper-fallback {
+  position: fixed;
+  inset: 0;
+  background: #0f0a1e;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wallpaper-fallback-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem 1.6rem;
+  max-width: 80vw;
+  padding: 2rem;
+}
+
+.wallpaper-fallback-word {
+  opacity: 0;
+  animation: wallpaperFadeFloat 6s ease-in-out infinite;
+  transition: color 0.3s, transform 0.3s;
+  cursor: default;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.wallpaper-fallback-word:hover {
+  color: #ffffff !important;
+  transform: scale(1.15);
+}
+
+@keyframes wallpaperFadeFloat {
+  0%   { opacity: 0.25; transform: translateY(4px); }
+  50%  { opacity: 0.85; transform: translateY(-4px); }
+  100% { opacity: 0.25; transform: translateY(4px); }
+}
+
 /* ── Lock Screen ──────────────────────────────────────────────── */
 .lockscreen {
   position: fixed;

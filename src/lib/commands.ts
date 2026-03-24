@@ -471,7 +471,7 @@ const COMMANDS: Record<
         { type: 'blank' },
         {
           type: 'link',
-          text: `  Email:    ${info.email}`,
+          text: '  Email:    [click to email]',
           href: `mailto:${info.email}`,
         },
         {
@@ -521,7 +521,7 @@ const COMMANDS: Record<
           },
           {
             type: 'text',
-            content: `To: ${email}`,
+            content: 'To: [opening in mail client]',
           },
           {
             type: 'link',

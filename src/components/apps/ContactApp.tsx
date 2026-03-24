@@ -19,7 +19,7 @@ export function ContactApp({ info }: ContactAppProps) {
         <div className="contact-field">
           <span className="contact-field-label">From:</span>
           <span className="contact-field-value">
-            {info.preferred_name} ({info.email})
+            {info.preferred_name}
           </span>
         </div>
         <div className="contact-field">
@@ -44,7 +44,7 @@ export function ContactApp({ info }: ContactAppProps) {
           className="contact-link-btn"
         >
           <span className="contact-link-icon"><Mail size={20} /></span>
-          <span>{info.email}</span>
+          <span>Email Me</span>
         </a>
 
         <a

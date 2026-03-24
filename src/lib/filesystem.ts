@@ -72,7 +72,7 @@ export function buildFileSystem(data: DerivedResumeData): FSDirectory {
     `Name:     ${data.personal_info.name}`,
     `Title:    ${data.personal_info.title}`,
     `Location: ${data.personal_info.location}`,
-    `Email:    ${data.personal_info.email}`,
+    `Email:    [use 'hire' command]`,
     `GitHub:   ${data.personal_info.github}`,
   ];
   if (data.personal_info.linkedin) {

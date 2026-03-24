@@ -1,10 +1,45 @@
 'use client';
 
-import { Suspense, useRef, useState, useMemo, useEffect } from 'react';
+import React, { Suspense, useRef, useState, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { getResume } from '@/data';
+
+/* ── WebGL Detection ──────────────────────────────────────────── */
+
+function isWebGLAvailable(): boolean {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext('webgl') || canvas.getContext('webgl2'))
+    );
+  } catch {
+    return false;
+  }
+}
+
+/* ── Error Boundary (catches runtime WebGL failures) ──────────── */
+
+class WebGLErrorBoundary extends React.Component<
+  { fallback: React.ReactNode; children: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { fallback: React.ReactNode; children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) return this.props.fallback;
+    return this.props.children;
+  }
+}
 
 /* ── Data ─────────────────────────────────────────────────────── */
 
@@ -145,24 +180,74 @@ function CanvasLoader() {
   );
 }
 
+/* ── CSS Fallback (no WebGL) ───────────────────────────────────── */
+
+function CSSFallback() {
+  return (
+    <div className="wallpaper-fallback">
+      <div className="wallpaper-fallback-grid">
+        {skillEntries.map((entry, i) => (
+          <span
+            key={i}
+            className="wallpaper-fallback-word"
+            style={{
+              fontSize: `${entry.fontSize * 0.45}rem`,
+              color: entry.color,
+              animationDelay: `${(i * 0.15) % 4}s`,
+            }}
+          >
+            {entry.text}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ── Scene ─────────────────────────────────────────────────────── */
 
 export default function WallpaperScene() {
+  const [webgl, setWebgl] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setWebgl(isWebGLAvailable());
+  }, []);
+
+  // Still detecting
+  if (webgl === null) {
+    return (
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+        <CanvasLoader />
+      </div>
+    );
+  }
+
+  // No WebGL — use CSS fallback
+  if (!webgl) {
+    return (
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+        <CSSFallback />
+      </div>
+    );
+  }
+
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
-      <Suspense fallback={<CanvasLoader />}>
-        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 75 }}>
-          <fog attach="fog" args={['#0f0a1e', 25, 70]} />
-          <Cloud radius={20} />
-          <OrbitControls
-            enablePan={false}
-            autoRotate
-            autoRotateSpeed={1.0}
-            minDistance={15}
-            maxDistance={55}
-          />
-        </Canvas>
-      </Suspense>
+      <WebGLErrorBoundary fallback={<CSSFallback />}>
+        <Suspense fallback={<CanvasLoader />}>
+          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 75 }}>
+            <fog attach="fog" args={['#0f0a1e', 25, 70]} />
+            <Cloud radius={20} />
+            <OrbitControls
+              enablePan={false}
+              autoRotate
+              autoRotateSpeed={1.0}
+              minDistance={15}
+              maxDistance={55}
+            />
+          </Canvas>
+        </Suspense>
+      </WebGLErrorBoundary>
     </div>
   );
 }

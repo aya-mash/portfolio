@@ -45,8 +45,16 @@ export function AboutApp({ resume }: AboutAppProps) {
           </span>
         </div>
         <div className="about-detail-row">
-          <span className="about-detail-label">Email</span>
-          <span className="about-detail-value">{personal_info.email}</span>
+          <span className="about-detail-label">Contact</span>
+          <span className="about-detail-value">
+            <a href={personal_info.linkedin || personal_info.github} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            {' · '}
+            <a href={personal_info.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </span>
         </div>
       </div>
 

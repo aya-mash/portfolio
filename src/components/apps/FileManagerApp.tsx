@@ -77,7 +77,7 @@ export function FileManagerApp({ resume }: FileManagerAppProps) {
           { name: 'name.txt', meta: resume.personal_info.name, ext: 'txt' },
           { name: 'title.txt', meta: resume.personal_info.title, ext: 'txt' },
           { name: 'location.txt', meta: resume.personal_info.location, ext: 'txt' },
-          { name: 'email.txt', meta: resume.personal_info.email, ext: 'txt' },
+          { name: 'contact.txt', meta: 'Use Contact app to reach out', ext: 'txt' },
           { name: 'summary.md', meta: resume.executive_summary.slice(0, 80) + '...', ext: 'md' },
         ];
       case 'Projects':
@@ -106,7 +106,7 @@ export function FileManagerApp({ resume }: FileManagerAppProps) {
         }));
       case 'Contact':
         return [
-          { name: 'email.lnk', meta: resume.personal_info.email, ext: 'lnk' },
+          { name: 'email.lnk', meta: 'Opens mail client', ext: 'lnk' },
           { name: 'github.lnk', meta: resume.personal_info.github, ext: 'lnk' },
           ...(resume.personal_info.linkedin
             ? [{ name: 'linkedin.lnk', meta: resume.personal_info.linkedin, ext: 'lnk' }]
