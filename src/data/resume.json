@@ -1,0 +1,495 @@
+{
+  "personal_info": {
+    "name": "Ayabulela Mahlathini",
+    "preferred_name": "Aya",
+    "title": "Software Engineer",
+    "location": "Remote, open to relocation",
+    "github": "https://github.com/aya-mash",
+    "linkedin": "https://www.linkedin.com/in/ayabulela-mahlathini",
+    "email": "ayabulelamahlathini@gmail.com"
+  },
+  "executive_summary": "Software Engineer specializing in architecting scalable React ecosystems and standardizing developer experience. Expert in migrating legacy build systems (Webpack to Vite), optimizing high-scale data grids, and enforcing security compliance through automated CI/CD pipelines. Proven track record of reducing build times by 40% and delivering robust, accessibility-first design systems for enterprise operations.",
+  "key_achievements": [
+    {
+      "heading": "Frontend Architecture & Standardization",
+      "description": "Architected a reusable data UI framework (filters, virtualization, inline edit) used across 50+ internal modules, reducing feature delivery time by ~30%."
+    },
+    {
+      "heading": "Platform Engineering & DX",
+      "description": "Led the migration from Webpack to Vite, cutting local server start times from 40s to <1s and build times by 40%, significantly boosting team velocity."
+    },
+    {
+      "heading": "High-Scale Performance",
+      "description": "Optimized a mission-critical planning tool handling 1M+ records, achieving sub-16ms render performance via React Virtualization and Web Worker offloading."
+    },
+    {
+      "heading": "Security & Compliance Operations",
+      "description": "Designed a Zero-Trust client-side architecture with OIDC/JWT integration and automated secret scanning pipelines, ensuring ISO-compliant security posture."
+    },
+    {
+      "heading": "CI/CD Modernization",
+      "description": "Rebuilt Azure Pipelines as modular GitHub Actions workflows with caching and parallel execution, reducing CI feedback loops by 50%."
+    },
+    {
+      "heading": "Quality Gates & Automation",
+      "description": "Enforced code quality standards through schema-driven validation pipelines and automated dependency scanning, reducing production bugs by 25%."
+    },
+    {
+      "heading": "Mentorship & Technical Leadership",
+      "description": "Authored comprehensive internal documentation and RFCs, facilitating the onboarding of 5+ developers and standardizing best practices across distributed teams."
+    },
+    {
+      "heading": "Mobile & Edge capabilities",
+      "description": "Delivered production-ready React Native capabilities including NFC integrations and offline-first workflows for field operations."
+    },
+    {
+      "heading": "Automated Remediation",
+      "description": "Engineered a deterministic history rewrite tool for secret remediation, reducing manual incident response time from days to hours."
+    },
+    {
+      "heading": "Stable API Contracts",
+      "description": "Collaborated on GraphQL schema & validation semantics; optimized payloads reduced client workarounds and improved UI responsiveness."
+    },
+    {
+      "heading": "Mobile enablement",
+      "description": "Advanced an internal hub app from prototype to production with NFC, modern auth, telemetry and robust navigation improving field UX."
+    },
+    {
+      "heading": "Repository hygiene automation",
+      "description": "Authored automated secret scanning & safe history rewrite workflow (scan, inventory, deterministic replacement, dry-run, verified rewrite) markedly reducing manual remediation effort."
+    }
+  ],
+  "core_technical_skills": {
+    "Frontend Platform": [
+      "System Design",
+      "Monorepo Architecture",
+      "Micro-frontends",
+      "Design Systems",
+      "React",
+      "TypeScript",
+      "Next.js"
+    ],
+    "Developer Experience & Infra": [
+      "Vite Strategy",
+      "Webpack Migration",
+      "CI/CD Pipelines",
+      "GitHub Actions",
+      "Docker/Containerization",
+      "Automated Versioning"
+    ],
+    "Security & Quality": [
+      "AppSec Operations",
+      "Zero-Trust Auth (OIDC/JWT)",
+      "Static Analysis (SonarQube)",
+      "Dependency Scanning",
+      "Schema Validation"
+    ],
+    "Data & Performance": [
+      "GraphQL Federation",
+      "React Virtualization",
+      "Web Workers",
+      "Caching Strategies",
+      "Large-Scale Pagination"
+    ]
+  },
+  "core_competencies": [
+    {
+      "title": "Frontend Engineering",
+      "items": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "MUI",
+        "State management",
+        "Complex tables and forms",
+        "Accessibility",
+        "i18n",
+        "Virtualization",
+        "React Native",
+        "Expo"
+      ]
+    },
+    {
+      "title": "Platform Engineering and DX",
+      "items": [
+        "Reusable UI frameworks",
+        "Scaffolding",
+        "Webpack to Vite migrations",
+        "Env & versioning automation",
+        "Documentation",
+        "Review checklists",
+        "Secret remediation automation"
+      ]
+    },
+    {
+      "title": "Data and APIs",
+      "items": [
+        "GraphQL",
+        "REST",
+        "Apollo Client",
+        "React Query",
+        "Pagination strategies",
+        "Validation alignment",
+        "Auditing alignment",
+        ".NET",
+        "HotChocolate"
+      ]
+    },
+    {
+      "title": "Tooling and CI/CD",
+      "items": [
+        "Azure DevOps",
+        "GitHub Actions workflows",
+        "Pipelines & releases",
+        "Node.js",
+        "Webpack",
+        "Vite",
+        "Docker",
+        "Containerized deployments",
+        "Automated versioning",
+        "Release hygiene"
+      ]
+    },
+    {
+      "title": "Quality and Security",
+      "items": [
+        "Schema-driven validation",
+        "Error surfacing frameworks",
+        "SonarQube",
+        "BlackDuck",
+        "JWT",
+        "OIDC",
+        "Jest",
+        "Cypress",
+        "Git history secret purging"
+      ]
+    },
+    {
+      "title": "Collaboration and Leadership",
+      "items": [
+        "Cross-team alignment",
+        "Lightweight RFCs",
+        "Mentoring",
+        "Onboarding",
+        "Stakeholder demos",
+        "Enablement"
+      ]
+    }
+  ],
+  "technical_stack": {
+    "Languages": ["TypeScript", "JavaScript", "Java (academic)", "SQL basics"],
+    "Frameworks and Libraries": [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "MUI",
+      "Zustand",
+      "Apollo Client",
+      "React Query",
+      "NestJS",
+      "Prisma"
+    ],
+    "APIs and Backend Collaboration": [
+      "GraphQL",
+      ".NET",
+      "HotChocolate",
+      "REST"
+    ],
+    "Tooling": [
+      "Azure DevOps",
+      "GitHub Actions",
+      "Vite",
+      "Webpack",
+      "Node.js",
+      "Docker",
+      "AWS Amplify",
+      "SonarQube",
+      "BlackDuck"
+    ],
+    "Testing": ["Jest", "Cypress", "Vitest", "Playwright"],
+    "Auth and Security": ["JWT", "OIDC"],
+    "Cloud and Infra Familiarity": [
+      "AWS basics",
+      "AWS Amplify Hosting",
+      "Azure Cloud Compute Platform",
+      "Supabase",
+      "Vercel",
+      "Railway",
+      "CI/CD patterns"
+    ]
+  },
+  "professional_experience": [
+    {
+      "company": "Mercedes-Benz South Africa",
+      "role": "Software Engineer, Global Production & Reporting Platform",
+      "start_date": "2021-12",
+      "end_date": "Present",
+  "scope": "Frontend ownership for a multi-region internal planning & data management platform handling large-scale structured data updates and recurring file imports.",
+      "responsibilities": [
+        "Consolidated table and form experiences into a reusable UI foundation, reducing feature delivery time by ~30% and unifying UX across 50+ modules.",
+        "Engineered a schema-driven import pipeline with pre-validation, increasing first-pass data acceptance rates by 60% and eliminating manual data correction tickets.",
+        "Standardized GraphQL schema and validation contracts, reducing frontend-backend integration bugs and enabling independent release cycles.",
+        "Secured the platform by embedding automated static analysis and OIDC/JWT authentication, achieving 100% compliance with internal security audits.",
+        "Architected a standardized Vite boilerplate, cutting build times by 40% (from 40s to <1s start time) and reducing new service setup time from days to hours.",
+        "Launched a production-ready mobile hub with NFC capabilities, enabling secure, tracked access for field operations and reducing physical logbook usage.",
+        "Established engineering standards and onboarding documentation, scaling the team from 3 to 8 engineers while maintaining high code quality.",
+        "Designed an automated secret remediation workflow, reducing incident response time for repository history cleansing by 90%."
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "MUI",
+        "State Management",
+        "Apollo Client",
+        "React Query",
+        "GraphQL",
+        ".NET",
+        "HotChocolate",
+        "Node.js",
+        "Azure DevOps",
+        "Webpack",
+        "Vite",
+        "SonarQube",
+        "Docker",
+        "JWT",
+        "OIDC"
+      ]
+    },
+    {
+      "company": "Autumn Leaf IT",
+      "role": "Junior Software Developer",
+      "start_date": "2021-08",
+      "end_date": "2021-11",
+      "scope": "Full stack feature development and cloud deployment support.",
+      "responsibilities": [
+        "Built full stack features with React and GraphQL.",
+        "Supported cloud deployments and improved release reliability."
+      ],
+      "technologies": ["React", "GraphQL", "Node.js", "AWS"]
+    },
+    {
+      "company": "Amazon Web Services",
+      "role": "Intern Cloud Support Associate",
+      "start_date": "2021-01",
+      "end_date": "2021-06",
+      "scope": "Operational support and troubleshooting for core AWS services.",
+      "responsibilities": [
+        "Handled issues related to EC2, S3, IAM, and CloudWatch.",
+        "Authored documentation and knowledge base entries for customer workflows."
+      ],
+      "technologies": [
+        "AWS EC2",
+        "AWS S3",
+        "AWS IAM",
+        "Amazon CloudWatch",
+        "AWS CLI"
+      ]
+    }
+  ],
+  "select_projects": [
+    {
+      "title": "BLACKNWHITESIX - Legacy-to-Modern Platform Migration",
+      "scope": "Public",
+      "description": "Contracted to migrate a legacy PHP + Xamarin music marketplace (CodeCanyon scripts) into a modern, typed architecture. Re-built as a 9-workspace Turborepo monorepo delivering 3 independently deployable platforms (Next.js storefront, NestJS API, Expo mobile) sharing 28 Zod contract schemas across all runtimes. 55 Prisma models with append-only wallet ledger, BullMQ worker for FFmpeg audio transcoding, and Paystack payments in ZAR.",
+      "outcome": "3 platforms sharing 1 contract layer. Production-grade CI/CD (GitHub Actions, Docker, Vercel, Railway, Supabase). Currently live on preprod.",
+      "technologies": [
+        "Next.js",
+        "React",
+        "NestJS",
+        "Prisma",
+        "Expo",
+        "React Native",
+        "Supabase",
+        "TypeScript",
+        "BullMQ",
+        "Paystack"
+      ],
+      "url": "https://blacknwhitesix.vercel.app",
+      "screenshot": "/screenshots/blacknwhitesix.png"
+    },
+    {
+      "title": "Customer Spending Insights Dashboard",
+      "scope": "Public",
+      "description": "React + TypeScript analytics app with token-based theming, React Query data layer, MSW-powered mocks, and Playwright/Vitest coverage; ships as a secure PWA with charts, PDF receipts, and offline fallbacks.",
+      "outcome": "Demonstrates end-to-end product delivery from architecture and testing to AWS Amplify hosting with Docker and nginx hardening.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "React Query",
+        "MSW",
+        "Recharts",
+        "Docker",
+        "AWS Amplify"
+      ],
+      "url": "https://develop.d2pazk2z2et2fb.amplifyapp.com/",
+      "screenshot": "/screenshots/spending_dashboard.png"
+    },
+    {
+      "title": "Foonda",
+      "scope": "Public",
+      "description": "AI-powered career guidance and resume builder focused on South African users with modern web UX and structured data modeling.",
+      "outcome": "Demonstrates full stack product design with AI integration, resume workflows, and robust data structures.",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Gemini AI"
+      ],
+      "url": "https://foonda.amash.tech/",
+      "screenshot": "/screenshots/foonda.png"
+    },
+    {
+      "title": "Containerized Frontend on Azure Compute",
+      "scope": "Internal",
+      "description": "Containerized the multi-region planning UI using multi-stage Docker builds, nginx hardening, and health-checked workloads, then migrated hosting to the internal Azure Cloud Compute Platform.",
+      "outcome": "Improved deployment parity, simplified scaling, and enabled platform guardrails (runtime config, security headers, observability hooks).",
+      "technologies": [
+        "Docker",
+        "nginx",
+        "Azure DevOps",
+        "Azure Cloud Compute",
+        "React",
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Azure Pipelines to GitHub Actions Migration",
+      "scope": "Internal",
+      "description": "Rebuilt the CI/CD system for the planning platform, porting Azure Pipelines stages into reusable GitHub Actions workflows with matrix testing, build caching, artifact reuse, and guarded production deployments.",
+      "outcome": "Cut pipeline time, aligned with enterprise GitHub governance, and improved release visibility across environments.",
+      "technologies": [
+        "GitHub Actions",
+        "Azure DevOps",
+        "Node.js",
+        "React",
+        "Testing automation"
+      ]
+    },
+    {
+      "title": "Global Master Data and Planning Platform (Web)",
+      "scope": "Internal",
+      "description": "Enterprise web platform enabling regional production and supply chain planning with high volume master data updates and imports.",
+      "outcome": "Operational reliability at scale with standardized UX and guardrails for data integrity.",
+      "technologies": ["React", "TypeScript", "GraphQL", ".NET", "Azure DevOps"]
+    },
+    {
+      "title": "Schema-driven Import Pipeline",
+      "scope": "Internal",
+      "description": "Pre-validation and reconciliation for file-based imports with early error surfacing, coercions, and automatic lookups.",
+      "outcome": "Higher import success rates and fewer production incidents related to data quality.",
+      "technologies": ["React", "TypeScript", "GraphQL", ".NET APIs"]
+    },
+    {
+      "title": "Build Modernization and Boilerplate",
+      "scope": "Internal",
+      "description": "Vite-based app template with environment handling and automated versioning; Webpack to Vite migrations for speed and consistency.",
+      "outcome": "About 40 percent faster builds and improved developer onboarding.",
+      "technologies": ["Vite", "Node.js", "Webpack", "Azure DevOps", "Docker"]
+    },
+    {
+      "title": "Mobile Access and Authentication",
+      "scope": "Internal",
+      "description": "Internal companion app with NFC interactions, OIDC authentication, usage telemetry, and mobile navigation patterns.",
+      "outcome": "Stronger access controls, improved visibility through telemetry, and a better mobile UX.",
+      "technologies": ["React Native", "Expo", "OIDC", "JWT"]
+    },
+    {
+      "title": "GraphQL Domain APIs",
+      "scope": "Internal",
+      "description": "Queries and mutations for pricing and classification domains with validation rules and auditing fields; clarified error semantics and improved payload efficiency.",
+      "outcome": "Clearer contracts, fewer client workarounds, and more predictable releases.",
+      "technologies": ["GraphQL", ".NET", "HotChocolate"]
+    },
+    {
+      "title": "Security and Compliance Enablement in CI",
+      "scope": "Internal",
+      "description": "Integrated static analysis and dependency license scanning into pipelines; remediated priority vulnerabilities and enforced guarded release policies.",
+      "outcome": "Improved security posture and smoother audit checkpoints.",
+      "technologies": ["Azure DevOps", "SonarQube", "BlackDuck", "Node.js"]
+    },
+    {
+      "title": "Repository Hygiene & Secret Scanning Automation",
+      "scope": "Internal",
+      "description": "Automated scanning and safe rewrite workflow (scan, inventory, replacement map, dry-run, rewrite, verification) orchestrating gitleaks + git filter-repo with deterministic replacement mapping.",
+      "outcome": "Standardized remediation path and significantly reduced manual effort per incident.",
+      "technologies": ["PowerShell", "gitleaks", "git filter-repo", "Automation Scripts"]
+    },
+    {
+      "title": "Material Pricing Administration",
+      "scope": "Internal",
+      "description": "Frontends and endpoints for standard parts pricing, exchange rates, surcharges, and transport costs with consistent validation and auditing.",
+      "outcome": "Streamlined pricing updates and reduced manual corrections.",
+      "technologies": ["React", "TypeScript", "GraphQL", ".NET"]
+    },
+    {
+      "title": "Workstations and Groups Administration",
+      "scope": "Internal",
+      "description": "Config UI for workstations and workplace groups using standardized table and form patterns; included bulk updates and validation.",
+      "outcome": "Faster configuration cycles and consistent data quality.",
+      "technologies": ["React", "TypeScript", "MUI"]
+    },
+    {
+      "title": "Supplier Onboarding and Cost Centers",
+      "scope": "Internal",
+      "description": "UI workflows and validations for supplier onboarding and cost center management leveraging shared platform components.",
+      "outcome": "Reduced onboarding friction and improved consistency across administrative modules.",
+      "technologies": ["React", "TypeScript", "GraphQL"]
+    },
+    {
+      "title": "Web NFC TypeScript Library",
+      "scope": "Public",
+      "description": "TypeScript wrapper for the Web NFC API with permission handling, scanning, writing flows, and robust error strategies.",
+      "outcome": "Demonstrates API design, device integration, and defensive error handling.",
+      "technologies": ["TypeScript", "Web NFC API"],
+      "url": "https://www.npmjs.com/package/@aya-mash/web-nfc-api"
+    },
+    {
+      "title": "E-Pharmacy System",
+      "scope": "Public",
+      "description": "React Native and Java system for pharmacy management and delivery as a capstone project.",
+      "outcome": "Demonstrates mobile app delivery and backend integration.",
+      "technologies": ["React Native", "Java"],
+      "url": "https://github.com/aya-mash/ePharmacyDeliverySystem"
+    },
+    {
+      "title": "FindaDoctor (Competition Project)",
+      "scope": "Public",
+      "description": "UX-first healthcare access app prototyped for the MTN ICT Challenge.",
+      "outcome": "Showcases rapid ideation and user-centered design for social impact.",
+      "technologies": ["Web", "Mobile"],
+      "url": "https://github.com/aya-mash/findadoctor"
+    }
+  ],
+  "education_certifications": [
+    {
+      "degree_cert": "Diploma in ICT in Applications Development",
+      "institution": "Cape Peninsula University of Technology",
+      "year": 2020
+    },
+    {
+      "degree_cert": "Meta Front-End Developer Professional Certificate",
+      "institution": "Meta",
+      "year": 2025
+    },
+    {
+      "degree_cert": "Microsoft Certified Azure Fundamentals",
+      "institution": "Microsoft",
+      "year": 2024
+    },
+    {
+      "degree_cert": "AWS Certified Cloud Practitioner",
+      "institution": "Amazon Web Services",
+      "year": 2021
+    }
+  ],
+  "additional_information": [
+    "Graduate development training in agile and DevOps practices.",
+    "Recognized for delivery excellence and documentation that improves cross-team alignment.",
+    "Mentorship and workshop facilitation for onboarding and pattern adoption.",
+    "Experienced in cross-cultural collaboration with distributed teams across regions using documentation-first alignment, async reviews, and clear ownership.",
+    "Proactively drove platform-level secret remediation automation creating a reusable, low-risk path for future incidents."
+  ]
+}
