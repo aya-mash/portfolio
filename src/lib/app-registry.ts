@@ -29,7 +29,7 @@ export const APP_REGISTRY: AppDefinition[] = [
     title: 'About This Mac',
     icon: Monitor,
     dockLabel: 'About',
-    defaultSize: { width: 600, height: 520 },
+    defaultSize: { width: 600, height: 600 },
     color: '#7c3aed',
   },
   {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import type { DerivedResumeData } from '@/data';
 import { useWindowManager } from '@/hooks/useWindowManager';
 import { APP_REGISTRY } from '@/lib/app-registry';
@@ -16,8 +16,20 @@ interface DesktopProps {
 
 export function Desktop({ resume }: DesktopProps) {
   const [locked, setLocked] = useState(true);
+  const [announcement, setAnnouncement] = useState('');
+  const announcementTimeout = useRef<ReturnType<typeof setTimeout>>();
 
   const handleUnlock = useCallback(() => setLocked(false), []);
+
+  const announce = useCallback((message: string) => {
+    setAnnouncement(message);
+    clearTimeout(announcementTimeout.current);
+    announcementTimeout.current = setTimeout(() => setAnnouncement(''), 3000);
+  }, []);
+
+  useEffect(() => {
+    return () => clearTimeout(announcementTimeout.current);
+  }, []);
 
   const appDefaults = APP_REGISTRY.map((app) => ({
     id: app.id,
@@ -34,6 +46,7 @@ export function Desktop({ resume }: DesktopProps) {
     restoreWindow,
     focusWindow,
     updatePosition,
+    updateSize,
   } = useWindowManager(appDefaults, 'about');
 
   /* Determine the focused (top) window's title for the menu bar */
@@ -55,24 +68,54 @@ export function Desktop({ resume }: DesktopProps) {
       const isFocused = win.zIndex === topWindow?.zIndex;
       if (isFocused) {
         minimizeWindow(id);
+        announce(`${win.title} minimized`);
       } else {
         focusWindow(id);
+        announce(`${win.title} focused`);
       }
     } else if (win.isOpen && win.isMinimized) {
       /* Restore from minimize */
       openWindow(id);
+      announce(`${win.title} restored`);
     } else {
       openWindow(id);
+      announce(`${win.title} opened`);
     }
   };
 
-  const handleDesktopIconDoubleClick = (id: string) => {
+  const handleDesktopIconOpen = (id: string) => {
     openWindow(id);
     focusWindow(id);
+    const app = APP_REGISTRY.find((a) => a.id === id);
+    if (app) announce(`${app.title} opened`);
+  };
+
+  const handleDesktopIconKeyDown = (e: React.KeyboardEvent, id: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleDesktopIconOpen(id);
+    }
+  };
+
+  const handleClose = (id: string) => {
+    closeWindow(id);
+    const win = windows.find((w) => w.id === id);
+    if (win) announce(`${win.title} closed`);
+  };
+
+  const handleMinimize = (id: string) => {
+    minimizeWindow(id);
+    const win = windows.find((w) => w.id === id);
+    if (win) announce(`${win.title} minimized`);
   };
 
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+      {/* Skip navigation */}
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
+
       {/* 3D Wallpaper */}
       <WallpaperScene />
 
@@ -92,34 +135,49 @@ export function Desktop({ resume }: DesktopProps) {
         activeWindowTitle={topWindow?.title}
       />
 
-      {/* Desktop icons */}
-      <div className="desktop-icons-grid">
-        {APP_REGISTRY.map((app) => (
-          <div
-            key={app.id}
-            className="desktop-icon"
-            onDoubleClick={() => handleDesktopIconDoubleClick(app.id)}
-          >
-            <div className="desktop-icon-image"><app.icon size={32} strokeWidth={1.5} /></div>
-            <span className="desktop-icon-label">{app.dockLabel}</span>
-          </div>
-        ))}
-      </div>
+      {/* Main content area */}
+      <main id="main-content">
+        <h1 className="sr-only">Ayabulela Mahlathini — Software Engineer Portfolio</h1>
 
-      {/* All windows */}
-      <WindowManager
-        windows={windows}
-        resume={resume}
-        onClose={closeWindow}
-        onMinimize={minimizeWindow}
-        onMaximize={maximizeWindow}
-        onRestore={restoreWindow}
-        onFocus={focusWindow}
-        onDrag={updatePosition}
-      />
+        {/* Desktop icons */}
+        <div className="desktop-icons-grid" role="list" aria-label="Desktop applications">
+          {APP_REGISTRY.map((app) => (
+            <div
+              key={app.id}
+              className="desktop-icon"
+              role="listitem"
+              tabIndex={0}
+              aria-label={`Open ${app.dockLabel}`}
+              onDoubleClick={() => handleDesktopIconOpen(app.id)}
+              onKeyDown={(e) => handleDesktopIconKeyDown(e, app.id)}
+            >
+              <div className="desktop-icon-image"><app.icon size={32} strokeWidth={1.5} /></div>
+              <span className="desktop-icon-label">{app.dockLabel}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* All windows */}
+        <WindowManager
+          windows={windows}
+          resume={resume}
+          onClose={handleClose}
+          onMinimize={handleMinimize}
+          onMaximize={maximizeWindow}
+          onRestore={restoreWindow}
+          onFocus={focusWindow}
+          onDrag={updatePosition}
+          onResize={updateSize}
+        />
+      </main>
 
       {/* Dock */}
       <Dock openWindowIds={openIds} onIconClick={handleDockClick} />
+
+      {/* Live region for screen reader announcements */}
+      <div aria-live="polite" role="status" className="sr-only">
+        {announcement}
+      </div>
     </div>
   );
 }

@@ -13,18 +13,14 @@ export type * from './types';
 
 let cached: DerivedResumeData | null = null;
 
-function computeTotalYears(
-  experiences: ResumeData['professional_experience'],
-): number {
-  if (!experiences.length) return 0;
-  const earliest = experiences.reduce((prev, curr) =>
-    curr.start_date < prev.start_date ? curr : prev,
-  );
-  const start = new Date(earliest.start_date + '-01');
+/* Career start: 04 January 2021 */
+const CAREER_START = new Date(2021, 0, 4);
+
+function computeTotalYears(): number {
   const now = new Date();
   const years =
-    (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
-  return Math.max(0, Math.round(years * 10) / 10);
+    (now.getTime() - CAREER_START.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
+  return Math.max(0, Math.floor(years));
 }
 
 export function getResume(): DerivedResumeData {
@@ -39,10 +35,19 @@ export function getResume(): DerivedResumeData {
     }))
     .sort((a, b) => a.category.localeCompare(b.category));
 
+  const totalYears = computeTotalYears();
+
+  /* Patch dynamic years into the executive summary */
+  const executive_summary = data.executive_summary.replace(
+    /\b\d+ years\b/,
+    `${totalYears}+ years`,
+  );
+
   cached = {
     ...data,
+    executive_summary,
     orderedSkillCategories,
-    totalYearsExperience: computeTotalYears(data.professional_experience),
+    totalYearsExperience: totalYears,
   };
 
   return cached;

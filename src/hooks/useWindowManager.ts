@@ -56,17 +56,33 @@ export function useWindowManager(
     [],
   );
 
+  const clampSizeToViewport = useCallback(
+    (size: { width: number; height: number }) => {
+      const viewportW = typeof window !== 'undefined' ? window.innerWidth : 1200;
+      const viewportH = typeof window !== 'undefined' ? window.innerHeight : 800;
+
+      return {
+        width: Math.min(size.width, viewportW - 40),
+        height: Math.min(size.height, viewportH - MENUBAR_HEIGHT - 100),
+      };
+    },
+    [],
+  );
+
   const [windows, setWindows] = useState<WindowState[]>(() =>
-    appDefaults.map((app, index) => ({
-      id: app.id,
-      title: app.title,
-      isOpen: app.id === initialOpenId,
-      isMinimized: false,
-      isMaximized: false,
-      position: computeInitialPosition(index, app.defaultSize),
-      size: app.defaultSize,
-      zIndex: app.id === initialOpenId ? 11 : 10,
-    })),
+    appDefaults.map((app, index) => {
+      const clampedSize = clampSizeToViewport(app.defaultSize);
+      return {
+        id: app.id,
+        title: app.title,
+        isOpen: app.id === initialOpenId,
+        isMinimized: false,
+        isMaximized: false,
+        position: computeInitialPosition(index, clampedSize),
+        size: clampedSize,
+        zIndex: app.id === initialOpenId ? 11 : 10,
+      };
+    }),
   );
 
   const getNextZIndex = useCallback(() => {

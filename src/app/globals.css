@@ -108,6 +108,75 @@ body {
   border: 1px solid var(--glass-border);
 }
 
+/* ── Accessibility ────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 4px;
+  z-index: 100000;
+  padding: 8px 16px;
+  background: var(--color-purple);
+  color: white;
+  border-radius: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Global focus-visible ring */
+:focus-visible {
+  outline: 2px solid var(--color-purple-light);
+  outline-offset: 2px;
+}
+
+.window-traffic-light:focus-visible {
+  outline-offset: 1px;
+  outline-color: var(--color-gray-700);
+}
+
+.dock-icon:focus-visible {
+  outline-offset: 3px;
+  outline-color: rgba(255, 255, 255, 0.8);
+}
+
+.desktop-icon:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.projects-filter-btn:focus-visible,
+.contact-link-btn:focus-visible,
+.contact-send-btn:focus-visible,
+.project-open-btn:focus-visible,
+.filemanager-folder:focus-visible {
+  outline-offset: 1px;
+}
+
+.skills-category-card:focus-visible {
+  outline-offset: 2px;
+  border-color: var(--color-purple-light);
+}
+
+.achievements-table th:focus-visible {
+  outline-offset: -2px;
+}
+
 /* ── Menu Bar ──────────────────────────────────────────────────── */
 .menubar {
   position: fixed;
@@ -135,12 +204,15 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .menubar-brand {
   font-weight: 700;
   color: var(--color-purple-light);
   letter-spacing: -0.02em;
+  flex-shrink: 0;
 }
 
 .menubar-menu-item {
@@ -149,6 +221,17 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
   transition: background var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menubar-active-title {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .menubar-menu-item:hover {
@@ -162,6 +245,8 @@ body {
   color: rgba(255, 255, 255, 0.6);
   font-size: 12px;
   font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .menubar-status-dot {
@@ -364,12 +449,89 @@ body {
   background: var(--color-surface);
 }
 
+/* ── Window Resize Handles ───────────────────────────────────── */
+.window-resize-handle {
+  position: absolute;
+  z-index: 2;
+}
+
+.window-resize-handle-right {
+  top: 40px;
+  right: 0;
+  width: 6px;
+  bottom: 0;
+  cursor: ew-resize;
+}
+
+.window-resize-handle-bottom {
+  left: 0;
+  bottom: 0;
+  height: 6px;
+  right: 0;
+  cursor: ns-resize;
+}
+
+.window-resize-handle-corner {
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+}
+
+.window-resize-indicator {
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.window:hover .window-resize-indicator,
+.window-focused .window-resize-indicator {
+  opacity: 0.25;
+}
+
+.window-resize-indicator::before,
+.window-resize-indicator::after {
+  content: '';
+  position: absolute;
+  background: var(--color-text-secondary);
+  border-radius: 1px;
+}
+
+.window-resize-indicator::before {
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 1.5px;
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+}
+
+.window-resize-indicator::after {
+  right: 0;
+  bottom: 0;
+  width: 5px;
+  height: 1.5px;
+  transform: rotate(-45deg) translateX(3px);
+  transform-origin: bottom right;
+}
+
 .window-maximized {
   border-radius: 0 !important;
 }
 
 .window-maximized .window-titlebar {
   border-radius: 0;
+}
+
+.window-maximized .window-resize-handle,
+.window-maximized .window-resize-indicator {
+  display: none;
 }
 
 /* ── Scrollbar Styling ─────────────────────────────────────────── */
@@ -437,7 +599,7 @@ body {
   font-size: 11px;
   color: white;
   text-align: center;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 0 8px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
   word-break: break-word;
 }
@@ -449,8 +611,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 24px;
-  gap: 16px;
+  padding: 24px 24px;
+  gap: 12px;
 }
 
 .about-avatar {
@@ -474,7 +636,7 @@ body {
 }
 
 .about-header h1 {
-  font-size: 24px;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--color-text-primary);
@@ -742,6 +904,10 @@ body {
   font: inherit;
   width: 100%;
   caret-color: transparent;
+}
+
+.v1-terminal:focus-within {
+  box-shadow: inset 0 0 0 2px var(--term-fg-dim);
 }
 
 .v1-terminal .terminal-input::placeholder {
@@ -1546,7 +1712,6 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(160deg, #0c0818 0%, #1a1030 40%, #0f0a1e 100%);
-  animation: lockscreenFadeIn 0.6s ease-out;
 }
 
 .lockscreen-unlocking {
@@ -1578,8 +1743,8 @@ body {
 }
 
 .lockscreen-avatar {
-  width: 140px;
-  height: 140px;
+  width: clamp(100px, 20vw, 140px);
+  height: clamp(100px, 20vw, 140px);
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.15);
@@ -1597,7 +1762,7 @@ body {
 }
 
 .lockscreen-name {
-  font-size: 26px;
+  font-size: clamp(1.25rem, 3vw, 1.625rem);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
   letter-spacing: -0.02em;
@@ -1649,7 +1814,7 @@ body {
 
 .lockscreen-hint {
   position: absolute;
-  bottom: 40px;
+  bottom: clamp(16px, 4vh, 40px);
   font-size: 12px;
   color: rgba(255, 255, 255, 0.2);
   animation: lockscreenPulse 3s ease-in-out infinite;
@@ -1658,6 +1823,37 @@ body {
 @keyframes lockscreenPulse {
   0%, 100% { opacity: 0.3; }
   50%      { opacity: 0.6; }
+}
+
+/* ── Tablet (769px–1024px) ────────────────────────────────────── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .desktop-icons-grid {
+    display: none;
+  }
+
+  .window {
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+  }
+
+  .dock-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    border-radius: 11px;
+  }
+
+  .menubar-menu-item {
+    display: none;
+  }
+
+  .skills-categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
 }
 
 /* ── Responsive ────────────────────────────────────────────────── */
@@ -1697,6 +1893,22 @@ body {
     transform: none;
   }
 
+  .dock-icon-label {
+    display: none;
+  }
+
+  .menubar-menu-item {
+    display: none;
+  }
+
+  .menubar-left {
+    gap: 10px;
+  }
+
+  .menubar-right {
+    gap: 8px;
+  }
+
   .window {
     position: fixed !important;
     left: 0 !important;
@@ -1712,6 +1924,11 @@ body {
 
   .window-titlebar {
     cursor: default;
+  }
+
+  .window-resize-handle,
+  .window-resize-indicator {
+    display: none;
   }
 
   .projects-grid {
@@ -1784,4 +2001,85 @@ body {
 
 .animate-slide-up {
   animation: slideUp 0.4s ease-out;
+}
+
+/* ── Landscape Phones ─────────────────────────────────────────── */
+@media (max-width: 768px) and (max-height: 500px) {
+  :root {
+    --menubar-height: 28px;
+    --dock-height: 56px;
+  }
+
+  .menubar {
+    height: var(--menubar-height);
+    font-size: 12px;
+  }
+
+  .dock-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+
+  .dock-icon-label {
+    display: none;
+  }
+
+  .dock-container {
+    padding: 4px 8px;
+  }
+}
+
+/* ── Reduced Motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .lockscreen {
+    animation: none;
+  }
+
+  .lockscreen-unlocking {
+    opacity: 0;
+    transition: opacity 0.1s ease-out !important;
+  }
+
+  .lockscreen-content {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .wallpaper-fallback-word {
+    animation: none;
+    opacity: 0.6;
+    transform: none;
+  }
+
+  .dock-icon,
+  .skills-category-card,
+  .education-card,
+  .contact-link-btn,
+  .contact-send-btn,
+  .experience-item,
+  .project-card {
+    transition: none;
+    transform: none;
+  }
+
+  .dock-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .dock-icon-wrapper:hover + .dock-icon-wrapper .dock-icon,
+  .dock-icon-wrapper:has(+ .dock-icon-wrapper:hover) .dock-icon {
+    transform: none;
+  }
 }

@@ -28,6 +28,13 @@ export function AchievementsApp({ achievements }: AchievementsAppProps) {
     }
   };
 
+  const handleSortKeyDown = (e: React.KeyboardEvent, field: SortField) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleSort(field);
+    }
+  };
+
   const sorted = useMemo(() => {
     const copy = [...achievements];
     copy.sort((a, b) => {
@@ -69,17 +76,39 @@ export function AchievementsApp({ achievements }: AchievementsAppProps) {
         <table>
           <thead>
             <tr>
-              <th className="col-process" onClick={() => handleSort('heading')}>
+              <th
+                className="col-process"
+                scope="col"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleSort('heading')}
+                onKeyDown={(e) => handleSortKeyDown(e, 'heading')}
+                aria-sort={sortField === 'heading' ? (sortDir === 'asc' ? 'ascending' : 'descending') : undefined}
+              >
                 Process Name
                 <span className="sort-indicator">{sortIndicator('heading')}</span>
               </th>
-              <th onClick={() => handleSort('description')}>
+              <th
+                scope="col"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleSort('description')}
+                onKeyDown={(e) => handleSortKeyDown(e, 'description')}
+                aria-sort={sortField === 'description' ? (sortDir === 'asc' ? 'ascending' : 'descending') : undefined}
+              >
                 Description
                 <span className="sort-indicator">
                   {sortIndicator('description')}
                 </span>
               </th>
-              <th className="col-status" onClick={() => handleSort('status')}>
+              <th
+                className="col-status"
+                scope="col"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleSort('status')}
+                onKeyDown={(e) => handleSortKeyDown(e, 'status')}
+              >
                 Status
                 <span className="sort-indicator">{sortIndicator('status')}</span>
               </th>

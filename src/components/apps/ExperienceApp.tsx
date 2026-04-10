@@ -6,14 +6,16 @@ interface ExperienceAppProps {
   experience: ProfessionalExperienceItem[];
 }
 
-function formatDateRange(start: string, end: string): string {
+function formatDateRange(start: string, end: string): { display: string; startISO: string; endISO: string | null } {
   const startDate = new Date(start + '-01');
   const startStr = startDate.toLocaleDateString('en-US', {
     month: 'short',
     year: 'numeric',
   });
 
-  if (end === 'Present') return `${startStr} \u2014 Present`;
+  if (end === 'Present') {
+    return { display: `${startStr} \u2014 Present`, startISO: start, endISO: null };
+  }
 
   const endDate = new Date(end + '-01');
   const endStr = endDate.toLocaleDateString('en-US', {
@@ -21,7 +23,7 @@ function formatDateRange(start: string, end: string): string {
     year: 'numeric',
   });
 
-  return `${startStr} \u2014 ${endStr}`;
+  return { display: `${startStr} \u2014 ${endStr}`, startISO: start, endISO: end };
 }
 
 export function ExperienceApp({ experience }: ExperienceAppProps) {
@@ -30,9 +32,10 @@ export function ExperienceApp({ experience }: ExperienceAppProps) {
       <div className="experience-timeline">
         {experience.map((exp, index) => {
           const isCurrent = exp.end_date === 'Present';
+          const dates = formatDateRange(exp.start_date, exp.end_date);
 
           return (
-            <div
+            <article
               key={`${exp.company}-${index}`}
               className={`experience-item ${isCurrent ? 'current' : ''}`}
             >
@@ -40,7 +43,13 @@ export function ExperienceApp({ experience }: ExperienceAppProps) {
               <div className="experience-company">{exp.company}</div>
               <div className="experience-role">{exp.role}</div>
               <div className="experience-dates">
-                {formatDateRange(exp.start_date, exp.end_date)}
+                <time dateTime={dates.startISO}>{dates.display.split(' \u2014 ')[0]}</time>
+                {' \u2014 '}
+                {dates.endISO ? (
+                  <time dateTime={dates.endISO}>{dates.display.split(' \u2014 ')[1]}</time>
+                ) : (
+                  'Present'
+                )}
               </div>
               {exp.scope && (
                 <div className="experience-scope">{exp.scope}</div>
@@ -57,7 +66,7 @@ export function ExperienceApp({ experience }: ExperienceAppProps) {
                   </span>
                 ))}
               </div>
-            </div>
+            </article>
           );
         })}
       </div>

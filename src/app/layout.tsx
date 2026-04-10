@@ -16,8 +16,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = 'https://amash.tech';
 const TITLE = 'Ayabulela Mahlathini — Software Engineer';
+const YEARS_EXPERIENCE = Math.floor(
+  (Date.now() - new Date(2021, 0, 4).getTime()) / (1000 * 60 * 60 * 24 * 365.25),
+);
 const DESCRIPTION =
-  'Software engineer with 5 years of full-stack ownership across enterprise platforms. Specializing in scalable React ecosystems, design systems, and developer experience.';
+  `Software engineer with ${YEARS_EXPERIENCE}+ years of full-stack ownership across enterprise platforms. Specializing in scalable React ecosystems, design systems, and developer experience.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
     siteName: 'Aya Mahlathini',
     images: [
       {
-        url: '/avatar.png',
+        url: `${SITE_URL}/avatar.png`,
         width: 800,
         height: 800,
         alt: 'Ayabulela Mahlathini — Software Engineer',
@@ -59,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: TITLE,
     description: DESCRIPTION,
-    images: ['/avatar.png'],
+    images: [`${SITE_URL}/avatar.png`],
   },
   robots: {
     index: true,

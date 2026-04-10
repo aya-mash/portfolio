@@ -22,6 +22,13 @@ export function SkillsApp({ skills }: SkillsAppProps) {
     setExpandedCategory((prev) => (prev === category ? null : category));
   };
 
+  const handleCategoryKeyDown = (e: React.KeyboardEvent, category: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleCategoryClick(category);
+    }
+  };
+
   return (
     <div className="skills-app">
       <div className="skills-header">
@@ -39,6 +46,11 @@ export function SkillsApp({ skills }: SkillsAppProps) {
               key={cat.category}
               className={`skills-category-card ${isExpanded ? 'expanded' : ''}`}
               onClick={() => handleCategoryClick(cat.category)}
+              onKeyDown={(e) => handleCategoryKeyDown(e, cat.category)}
+              role="button"
+              tabIndex={0}
+              aria-expanded={isExpanded}
+              aria-label={`${cat.category} — ${cat.skills.length} items`}
             >
               <div className="skills-category-icon"><Icon size={28} /></div>
               <div className="skills-category-title">{cat.category}</div>

@@ -23,6 +23,7 @@ interface WindowManagerProps {
   onRestore: (id: string) => void;
   onFocus: (id: string) => void;
   onDrag: (id: string, position: { x: number; y: number }) => void;
+  onResize: (id: string, size: { width: number; height: number }) => void;
 }
 
 function getAppContent(id: string, resume: DerivedResumeData) {
@@ -59,6 +60,7 @@ export function WindowManager({
   onRestore,
   onFocus,
   onDrag,
+  onResize,
 }: WindowManagerProps) {
   /* Determine which window has the highest z-index among visible windows */
   const visibleWindows = windows.filter((w) => w.isOpen && !w.isMinimized);
@@ -80,6 +82,7 @@ export function WindowManager({
           onRestore={() => onRestore(win.id)}
           onFocus={() => onFocus(win.id)}
           onDrag={onDrag}
+          onResize={onResize}
         >
           {getAppContent(win.id, resume)}
         </Window>

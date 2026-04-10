@@ -36,7 +36,7 @@ export function MenuBar({ name, title, activeWindowTitle }: MenuBarProps) {
         <span className="menubar-brand">AyaOS</span>
         {activeWindowTitle && (
           <>
-            <span className="menubar-menu-item">{activeWindowTitle}</span>
+            <span className="menubar-active-title">{activeWindowTitle}</span>
             <span className="menubar-menu-item">File</span>
             <span className="menubar-menu-item">Edit</span>
             <span className="menubar-menu-item">View</span>
@@ -46,8 +46,8 @@ export function MenuBar({ name, title, activeWindowTitle }: MenuBarProps) {
 
       <div className="menubar-right">
         <span title={`${name} - ${title}`}>{name}</span>
-        <span className="menubar-status-dot" title="Online" />
-        <span>{clock}</span>
+        <span className="menubar-status-dot" title="Online" aria-label="Online" />
+        <time>{clock}</time>
       </div>
     </header>
   );

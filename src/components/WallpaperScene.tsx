@@ -20,6 +20,37 @@ function isWebGLAvailable(): boolean {
   }
 }
 
+/* ── Reduced motion detection ─────────────────────────────────── */
+
+function usePrefersReducedMotion(): boolean {
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduced(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  return reduced;
+}
+
+/* ── Mobile detection ─────────────────────────────────────────── */
+
+function useIsMobile(): boolean {
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  return mobile;
+}
+
 /* ── Error Boundary (catches runtime WebGL failures) ──────────── */
 
 class WebGLErrorBoundary extends React.Component<
@@ -184,7 +215,7 @@ function CanvasLoader() {
 
 function CSSFallback() {
   return (
-    <div className="wallpaper-fallback">
+    <div className="wallpaper-fallback" aria-hidden="true">
       <div className="wallpaper-fallback-grid">
         {skillEntries.map((entry, i) => (
           <span
@@ -208,6 +239,8 @@ function CSSFallback() {
 
 export default function WallpaperScene() {
   const [webgl, setWebgl] = useState<boolean | null>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setWebgl(isWebGLAvailable());
@@ -216,23 +249,23 @@ export default function WallpaperScene() {
   // Still detecting
   if (webgl === null) {
     return (
-      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }} aria-hidden="true">
         <CanvasLoader />
       </div>
     );
   }
 
-  // No WebGL — use CSS fallback
-  if (!webgl) {
+  // Mobile or no WebGL — use CSS fallback (saves bundle weight + battery)
+  if (!webgl || isMobile) {
     return (
-      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }} aria-hidden="true">
         <CSSFallback />
       </div>
     );
   }
 
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+    <div style={{ position: 'fixed', inset: 0, zIndex: 0 }} aria-hidden="true">
       <WebGLErrorBoundary fallback={<CSSFallback />}>
         <Suspense fallback={<CanvasLoader />}>
           <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 75 }}>
@@ -240,7 +273,7 @@ export default function WallpaperScene() {
             <Cloud radius={20} />
             <OrbitControls
               enablePan={false}
-              autoRotate
+              autoRotate={!prefersReducedMotion}
               autoRotateSpeed={1.0}
               minDistance={15}
               maxDistance={55}
